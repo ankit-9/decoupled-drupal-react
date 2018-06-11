@@ -1,0 +1,137 @@
+{
+  "footerMenu" : [
+    { "title": "Shopping-1",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online",
+          "externalLinks" : "yes"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online"
+        },
+        {
+          "url": "/signin",
+          "text": "Sign in / Register",
+          "externalLinks" : "yes"
+        }
+      ]
+    },
+    { "title": "Shopping-2",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online"
+        },
+        {
+          "url": "/signin",
+          "text": "Sign in / Register",
+          "id": "capture_signin_link"
+        }
+      ]
+    },
+    { "title": "Shopping-3",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/signin",
+          "text": "Sign in / Register",
+          "id": "capture_signin_link"
+        }
+      ]
+    },
+    { "title": "Shopping-4",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/signin",
+          "text": "Sign in / Register",
+          "id": "capture_signin_link"
+        }
+      ]
+    },
+    { "title": "Shopping-5",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started",
+          "externalLinks" : "yes"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store",
+          "externalLinks" : "yes"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale",
+          "externalLinks" : "yes"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online",
+          "externalLinks" : "yes"
+        }
+      ]
+    }
+  ]
+}

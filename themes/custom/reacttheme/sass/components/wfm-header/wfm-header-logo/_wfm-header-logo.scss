@@ -1,0 +1,61 @@
+// WFM Header Logo
+//
+// Markup: wfm-header-logo.twig
+//
+// Style guide: components.wfm-header.wfm-header-logo
+
+.header__block--logo {
+  @include em("max-width", 140px);
+  @include em("margin-left", -10px);
+
+  width: 30%;
+  float: left;
+  position: relative;
+
+  @include breakpoint($up-sm) {
+    @include em("width", 120px);
+    @include em("height", 90px);
+    @include em("margin-right", 15px);
+
+    margin-left: 0;
+  }
+
+  @include breakpoint($medium) {
+    @include em("margin-right", 8px);
+  }
+
+  @media only screen and (max-device-width: 330px) {
+    width: 22%;
+  }
+
+  .logo {
+    &__link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 98;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__img {
+      margin-top: -2em;
+      display: block;
+      max-width: 100%;
+      clip: rect(2em, 8.57em, 9.57em, 0);
+
+      @include breakpoint($small) {
+        max-height: 100px;
+        margin-top: -1em;
+        clip: rect(1em, 8.57em, 8.57em, 0);
+      }
+
+      @media only screen and (max-device-width: 330px) {
+        height: 80px;
+      }
+    }
+  }
+}

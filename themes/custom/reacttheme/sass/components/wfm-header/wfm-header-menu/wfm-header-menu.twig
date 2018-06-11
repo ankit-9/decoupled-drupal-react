@@ -1,0 +1,50 @@
+<div class="header__block">
+  <div class="header__block--menu menu menu--main">
+    <div class="menu--main__header visible-xs noscript">
+      <a href="javascript:void(0)" class="icon-hamburger" aria-expanded="false" aria-controls="mainMenu">
+          <span class="visually-hidden">Main Menu</span>
+          <svg class="svg-hamburger-dims">
+            <use xlink:href="#hamburger"></use>
+          </svg>
+
+          <svg class="svg-hamburger-x-dims">
+            <use xlink:href="#hamburger-x"></use>
+          </svg>
+      </a>
+    </div>
+    <input type="checkbox" class="wfm-form__checkbox noscript__checkbox rm-noscript" name="term" id="terms-conditions"  />
+    <label for="terms-conditions" class="wfm-form__checkbox--label noscript__checkbox--label rm-noscript">
+      <div class="menu--main__header">
+        <span class="visually-hidden">Main Menu</span>
+        <svg class="svg-hamburger-dims">
+          <use xlink:href="#hamburger"></use>
+        </svg>
+
+        <svg class="svg-hamburger-x-dims">
+          <use xlink:href="#hamburger-x"></use>
+        </svg>
+      </div>
+    </label>
+    <div class="menu--main__collapse visible-lg" id="bs-example-navbar-collapse-1">
+      <nav class="menu__navbar menu--main__navbar" id="main-menu" role="navigation" aria-label="Main Menu">
+        <span class="hidden">Main Menu</span>
+        <ul class="menu__nav menu--main__nav">
+          {% for menu in mainMenu %}
+            <li class="menu__item menu--main__item {{ menu.activeClass }}">
+              <a class="menu__link menu--main__link" href="{{ menu.url }}">{{ menu.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="header__block--search clearfix rm-noscript visible-lg">
+    <div class="search-header">
+      <a href="https://www.wholefoodsmarket.com/site_search/" aria-label="Search Button" role="button" tabindex="0" id="autocomplete" class="search-header__link">
+          <svg class="svg-search-icon-dims">
+          <use xlink:href="#search-icon"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

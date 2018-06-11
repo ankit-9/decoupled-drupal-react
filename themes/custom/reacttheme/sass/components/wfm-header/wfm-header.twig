@@ -1,0 +1,10 @@
+<header>
+  <div class="header__wrapper clearfix">
+    <div class="header__container clearfix">
+        {% include 'wfm-header-logo/wfm-header-logo.twig' with {'logo' :logo} only %}
+        {% include 'wfm-header-menu-top/wfm-header-menu-top.twig' %}
+        {% include 'wfm-header-menu/wfm-header-menu.twig' with {'mainMenu':mainMenu} only %}
+        {% include 'wfm-header-search/wfm-header-search.twig' with {'autocompleteoptions':autocompleteoptions} only %}
+    </div>
+  </div>
+</header>

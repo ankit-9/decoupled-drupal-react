@@ -1,0 +1,85 @@
+// WFM Coupons - Download App Block.
+//
+// Markup: coupons-download-app.twig
+//
+// Style guide: components.coupons.coupons-download-app
+
+.coupons-dwn-app {
+  @include em('padding', 10px);
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include breakpoint ($up-sm) {
+    @include rem('padding', 10px);
+
+    flex-direction: row;
+  }
+
+  @include breakpoint ($medium) {
+    @include rem('padding', 40px);
+
+    flex-direction: column;
+  }
+
+  &__left {
+    @include rem('padding', 0);
+
+    @include breakpoint($up-sm) {
+      @include rem('padding', 15px);
+    }
+
+    svg {
+      @include rem('width', 70px);
+      @include rem('width', 70px);
+
+      height: auto;
+
+      @include breakpoint($up-sm) {
+        @include rem('width', 120px);
+        @include rem('width', 120px);
+      }
+    }
+  }
+
+  &__right {
+    @include em('padding', 15px);
+
+    flex: 1;
+    font-family: $avenier-next;
+  }
+
+  &__title {
+    @include em('font-size', 18px);
+
+    margin-bottom: 0.27777778em;
+    font-weight: 600;
+  }
+
+  &__description {
+    @include em('font-size', 13px);
+
+    margin-bottom: 0.76923077em;
+    max-width: 22.30769231em;
+    line-height: 1.4em;
+  }
+
+  &__actions {
+    @include em('margin', 0 -5px);
+  }
+
+  &__btn {
+    @include em('padding', 0 5px);
+
+    display: inline-block;
+
+    .svg-app-store,
+    .svg-play-store {
+      width: 132px;
+      height: 40px;
+    }
+  }
+}

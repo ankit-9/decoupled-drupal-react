@@ -1,0 +1,112 @@
+// WFM Terms & Conditions.
+//
+// Markup: wfm-terms-conditions.twig
+//
+// Style guide: components.wfm-terms-conditions
+
+.terms-conditions {
+  &__wrapper {
+    @include em('padding', 20px 0);
+
+    @include breakpoint($up-sm) {
+      @include em('padding', 40px 0);
+    }
+
+    @extend %clearfix;
+  }
+
+  &__title {
+    @include rem('max-width', 750px);
+    @include rem('font-size', 36px);
+    @include rem('margin', 0 auto 40px auto);
+
+    display: block;
+    padding: 0;
+    font-family: $cooper-bt;
+    line-height: 1.2;
+    text-align: center;
+
+    @include breakpoint($small) {
+      @include rem('font-size', 32px);
+    }
+  }
+
+  &__subtitle {
+    @include rem('margin', 25px 0 20px);
+    @include rem('font-size', 28px);
+
+    display: block;
+    padding: 0;
+    font-family: $cooper-bt;
+    line-height: 1.4;
+  }
+
+  &__heading {
+    @include rem('margin', 15px 0);
+    @include rem('font-size', 18px);
+
+    display: block;
+    padding: 0;
+    line-height: 1.4;
+  }
+
+  &__nav {
+    @include rem('margin-left', 30px);
+
+    display: block;
+    box-sizing: border-box;
+    list-style-type: disc;
+    list-style-position: outside;
+
+    @include breakpoint($small) {
+      @include rem('margin-left', 25px);
+    }
+  }
+
+  &__item {
+    @include rem('margin-bottom', 2px);
+    @include rem('font-size', 13px);
+
+    display: list-item;
+    list-style-type: disc;
+    line-height: 1.6;
+  }
+
+  &__link {
+    &.link {
+      @include link;
+
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    @include rem('margin-bottom', 15px);
+    @include rem('font-size', 13px);
+
+    display: block;
+    line-height: 1.6;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__button {
+    &.button {
+      @include btn-red;
+      @include rem("width", 280px);
+
+      display: block;
+      margin: 0 auto;
+      padding: 0;
+      line-height: 2.2;
+    }
+  }
+}
+
+.alias--coupons-terms {
+  .block-page-title-block {
+    display: none;
+  }
+}

@@ -1,0 +1,75 @@
+// WFM Form Upgrade Account
+//
+// Markup: wfm-form-upgrade.twig
+//
+// Style guide: components.wfm-form.wfm-form-upgrade
+.upgrade__container {
+  &__subtitle {
+    @include rem('max-width', 490px);
+    @include rem('margin', 0 auto 50px auto);
+    @include rem('font-size', 18px);
+
+    display: block;
+    line-height: 1.4;
+  }
+
+  &__text {
+    @include rem('width', 420px);
+    @include rem('font-size', 18px);
+    @include rem('margin', 28px auto);
+
+    line-height: 1.4;
+
+    @include breakpoint($small) {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    @include rem('margin-bottom', 10px);
+  }
+
+  .upgrade-form {
+    @include rem('margin-top', 40px);
+
+    &--select-store {
+      @include rem('margin-bottom', 30px);
+    }
+
+    &__item-submit {
+      @include rem('margin-top', 35px);
+    }
+
+    &__error-msg {
+      &.error-msg {
+        position: absolute;
+        width: 100%;
+        top: auto;
+        left: auto;
+        bottom: -25px;
+        margin: 0;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    .wfm-form__input[type="submit"] {
+      margin-top: 4rem;
+    }
+  }
+}
+
+.wfm-user-upgrade-user {
+  .signinup-container {
+    &__title {
+      margin: 0 auto;
+      color: $default;
+
+      @include breakpoint($small) {
+        @include rem('margin-bottom', 10px);
+
+        line-height: normal;
+      }
+    }
+  }
+}

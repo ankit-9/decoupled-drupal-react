@@ -1,0 +1,52 @@
+{
+  "mainMenu" : [
+    {
+      "text": "Find a store",
+      "url": "#"
+    },
+    {
+      "text": "On Sale",
+      "url": "#"
+    },
+    {
+      "text": "Recipes",
+      "url": "#"
+    },
+    {
+      "text": "Shope Online",
+      "url": "#"
+    },
+    {
+      "text": "Customer Service",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    }
+  ],
+  "logo" : {
+    "path": "#",
+    "imgPath": "../compressed-images/wfm-logo.png",
+    "svgId": "logo"
+  },
+  "autocompleteoptions" : [
+    {
+      "text": "chia"
+    },
+    {
+      "text": "chicken"
+    },
+    {
+      "text": "chickpeas"
+    },
+    {
+      "text": "chiles"
+    },
+    {
+      "text": "chili"
+    },
+    {
+      "text": "chives"
+    },
+    {
+      "text": "chipotel"
+    }
+  ]
+}

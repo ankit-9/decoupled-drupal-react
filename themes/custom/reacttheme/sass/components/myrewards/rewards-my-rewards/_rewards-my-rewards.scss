@@ -1,0 +1,46 @@
+// WFM Rewards - My rewards block
+//
+// Markup: rewards-my-rewards.twig
+//
+// Style guide: components.rewards-my-rewards
+
+.rewards-my-rewards {
+  @include rem('padding', 30px 20px);
+
+  background: url(../compressed-images/desktop-unauth-bottom-green.png) center top no-repeat;
+  text-align: center;
+  background-size: cover;
+
+  @include breakpoint($up-sm) {
+    @include rem('padding', 60px 40px);
+  }
+
+  &__header {
+    @include rem('padding', 10px 0);
+
+    @include breakpoint($up-sm) {
+      @include rem('padding', 20px 0);
+    }
+  }
+
+  &__content {
+    @include rem('padding', 10px 0);
+
+    @include breakpoint($up-sm) {
+      @include rem('padding', 20px 0);
+    }
+  }
+
+  .svg-shopscansave-dims {
+    @include rem('width', 858px);
+    @include rem('height', 183px);
+  }
+
+  .svg-MyRewards-logo-horiz-kale-dims {
+    @include rem('width', 381px);
+    @include rem('height', 75px);
+
+    fill: $white;
+  }
+}
+

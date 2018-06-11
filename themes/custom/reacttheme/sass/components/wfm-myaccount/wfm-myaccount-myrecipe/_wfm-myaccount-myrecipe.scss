@@ -1,0 +1,75 @@
+// WFM My Account Recipe
+//
+// Markup: wfm-myaccount-myrecipe.twig
+//
+// Style guide: components.wfm-myaccount.wfm-myaccount-myrecipe
+
+.my-account {
+  &__recipe {
+    @extend %clearfix;
+
+    &-title {
+      @include rem('font-size', 24px);
+      @include rem('margin-bottom', 10px);
+
+      padding: 0;
+      font-family: $cooper-bt;
+      text-align: left;
+      text-transform: none;
+    }
+
+    &-text {
+      @include rem('font-size', 16px);
+
+      text-align: left;
+      line-height: 1.4;
+    }
+
+    &-list {
+      @include rem('margin-top', 30px);
+    }
+
+    &-nav {
+      list-style: none;
+
+      @include breakpoint($small) {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &-item {
+      @include breakpoint($small) {
+        @include rem('padding', 5px);
+        @include rem('margin-bottom', 10px);
+
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $search-border;
+      }
+    }
+
+    &-link {
+      &--remove {
+        &::before {
+          @include rem('margin', 0 10px);
+
+          content: '|';
+          display: inline-block;
+          vertical-align: middle;
+          color: $blk;
+
+          @include breakpoint($small) {
+            display: none;
+          }
+        }
+
+        &.link {
+          @include breakpoint($small) {
+            @include rem('margin-left', 10px);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+// WFM Header
+//
+// Markup: wfm-header.twig
+//
+// Style guide: components.wfm-header
+
+.header__block {
+  .menu {
+    &__nav {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &__item {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__link {
+      color: $wf-dark-green;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
+
+// Wrapper with baseline PX so that header can be embedded.
+.wfm8-header {
+  font-size: $base-font-size-ems;
+  -webkit-font-smoothing: antialiased;
+
+  #block-freerange-branding,
+  #block-vuejsintegrationblock,
+  #block-freerange-main-menu,
+  #block-vuejsintegrationblock-header-search,
+  .modal__mask {
+    font-size: $base-font-size-ems;
+    font-family: $avenier-next !important;
+  }
+}
+

@@ -1,0 +1,7 @@
+{
+  "logo" : {
+    "path": "#",
+    "imgPath": "../compressed-images/wfm-logo.png",
+    "svgId": "logo"
+  }
+}

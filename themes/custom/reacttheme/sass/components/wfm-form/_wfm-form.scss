@@ -1,0 +1,158 @@
+// WFM Forms
+//
+// Style guide: components.wfm-form
+
+.signinup-container {
+  @extend %clearfix;
+
+  text-align: center;
+
+  &__title {
+    @extend %clearfix;
+
+    @include rem('margin', 0 0 45px);
+    @include rem('font-size', 50px);
+
+    display: block;
+    padding: 0;
+    color: $wf-dr-blue;
+    font-family: $cooper-bt;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 1.2;
+
+    @include breakpoint($small) {
+      @include rem('margin-bottom', 35px);
+      @include rem('font-size', 44px);
+    }
+  }
+
+  &__text {
+    @include rem('margin', 0 0 5px);
+    @include rem('font-size', 14px);
+
+    color: $wf-ft-text;
+    font-family: $avenier-next;
+  }
+
+  &__sry-text {
+    @include rem('margin', 20px 0 0);
+  }
+
+  &__social {
+    display: block;
+    margin: 25px auto;
+
+    &-btn {
+      @include rem('width', 50px);
+      @include rem('height', 50px);
+      @include rem('margin', 0 20px);
+
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 50%;
+
+      @include breakpoint($very-small) {
+        @include rem('width', 40px);
+        @include rem('height', 40px);
+        @include rem('margin', 0 10px);
+      }
+
+      .icon {
+        display: block;
+        width: inherit;
+        height: inherit;
+        background-size: cover;
+
+        &-fb {
+          background-image: url('../images/svgs-to-sprite/fb_m.svg');
+        }
+
+        &-gmail {
+          background-image: url('../images/svgs-to-sprite/google_m.svg');
+        }
+      }
+    }
+
+    a.ext::after,
+    span.ext {
+      display: none;
+    }
+  }
+
+  &__divider {
+    @include rem('width', 520px);
+    @include rem('padding-top', 20px);
+    @include rem('margin', 0 auto 50px);
+
+    display: block;
+
+    @include breakpoint($small) {
+      width: 100%;
+    }
+
+    &-btn {
+      @include rem('width', 50px);
+      @include rem('height', 50px);
+      @include rem('font-size', 18px);
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      margin: 0 auto;
+      color: $default;
+      background-color: $white;
+      border-radius: 50%;
+    }
+
+    &-line {
+      display: inline-block;
+      vertical-align: middle;
+      width: calc(50% - 30px);
+      height: 1px;
+      background-color: $border-gray;
+    }
+  }
+
+  .error-text {
+    color: $wf-input-er;
+    position: absolute;
+    top: -55px;
+    width: 100%;
+  }
+
+  .signinup__below {
+    &__link {
+      color: $wf-link-green;
+      text-decoration: underline;
+      vertical-align: text-top;
+
+      @include breakpoint($small) {
+        @include rem('margin-top', 5px);
+
+        display: block;
+      }
+
+      &:hover {
+        color: $wf-ft-lnkHover;
+      }
+    }
+
+    &__text {
+      @include rem('margin-top', 20px);
+
+      margin-bottom: 0;
+    }
+  }
+
+  .signin-form {
+    &__item--password {
+      @include rem('margin-bottom', 5px);
+    }
+
+    &__password-error-message {
+      @include rem('margin-bottom', 25px);
+    }
+  }
+}

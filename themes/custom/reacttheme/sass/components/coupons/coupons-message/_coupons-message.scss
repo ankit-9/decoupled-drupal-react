@@ -1,0 +1,56 @@
+// WFM Coupons - Message
+//
+// Markup: coupons-message.twig
+//
+// Style guide: components.coupons.coupons-message
+.coupons-msg {
+  &__wrapper {
+    @extend %clearfix;
+
+    @include rem('margin', 40px 0);
+
+    display: block;
+    text-align: center;
+
+    @include breakpoint($small) {
+      @include rem('margin', 20px 0);
+    }
+  }
+
+  &__title {
+    @include rem('font-size', 46px);
+    @include rem('margin-bottom', 30px);
+
+    display: block;
+    padding: 0;
+    font-family: $cooper-bt;
+    line-height: 1.2;
+
+    @include breakpoint($small) {
+      @include rem('font-size', 32px);
+    }
+  }
+
+  &__text {
+    @include rem('margin', 10px auto);
+    @include rem('font-size', 16px);
+
+    display: block;
+    line-height: 1.2;
+
+    @include breakpoint($small) {
+      @include rem('max-width', 350px);
+      @include rem('margin', 10px auto 20px);
+
+      line-height: 1.4;
+    }
+  }
+
+  &__button {
+    &.link {
+      @include btn-red;
+      @include rem('width', 257px);
+      @include rem('margin', 50px auto);
+    }
+  }
+}

@@ -1,0 +1,109 @@
+// WFM Rewards - Rewards Introduction block Anonymous.
+//
+// Markup: rewards-introduction-anony.twig
+//
+// Style guide: components.rewards-introduction-anony
+
+.rewards-int-block {
+  @include rem('padding', 20px);
+
+  text-align: center;
+  background: url(../compressed-images/homepage_hero_bg.jpg) center center no-repeat;
+
+  @include breakpoint($up-sm) {
+    @include rem('padding', 40px);
+  }
+
+  &__logo {
+    max-width: 250px;
+    margin: 0 auto;
+
+    @include breakpoint($up-sm) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    @include rem('font-size', 20px);
+    @include rem('margin-bottom', 6px);
+
+    font-family: $avenier-next;
+    font-weight: 500;
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 30px);
+    }
+
+    &.mobile-visible {
+      @include breakpoint($up-sm) {
+        display: none;
+      }
+    }
+
+    &.desktop-visible {
+      display: none;
+
+      @include breakpoint($up-sm) {
+        display: block;
+      }
+    }
+  }
+
+  &__heading {
+    @include rem('font-size', 20px);
+
+    font-family: $avenier-next;
+    position: relative;
+    margin: 20px auto;
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 44px);
+
+      max-width: 700px;
+    }
+  }
+
+  &__button {
+    @include rem('font-size', 14px);
+
+    display: inline-block;
+    width: 200px;
+    border-radius: 18px;
+    padding: 10px 0;
+    background: $wf-submit;
+    color: $white !important;
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 18px);
+
+      width: 257px;
+      border-radius: 20px;
+    }
+
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  &__footer {
+    @include rem('font-size', 12px);
+    @include rem('margin-top', 20px);
+    @include rem('margin-bottom', 0);
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 18px);
+      @include rem('margin-top', 40px);
+      @include rem('margin-bottom', 10px);
+    }
+
+    a {
+      color: $wf-link-green;
+      text-decoration: underline;
+
+      &:hover {
+        color: $wf-link-green;
+        text-decoration: underline;
+      }
+    }
+  }
+}

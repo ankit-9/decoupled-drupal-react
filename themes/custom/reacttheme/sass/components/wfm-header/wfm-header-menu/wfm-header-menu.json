@@ -1,0 +1,25 @@
+{
+  "mainMenu" : [
+    {
+      "text": "Find a store",
+      "url": "#",
+      "activeClass": "active"
+    },
+    {
+      "text": "On Sale",
+      "url": "#"
+    },
+    {
+      "text": "Recipes",
+      "url": "#"
+    },
+    {
+      "text": "Shope Online",
+      "url": "#"
+    },
+    {
+      "text": "Sing in/Register",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    }
+  ]
+}

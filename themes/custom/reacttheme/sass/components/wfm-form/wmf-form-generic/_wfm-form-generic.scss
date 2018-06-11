@@ -1,0 +1,507 @@
+// WFM Form Generic
+//
+// Markup: wfm-form-generic.twig
+//
+// Style guide: components.wfm-form.wfm-form-generic
+
+.wfm-form {
+  @include rem('width', 520px);
+
+  display: block;
+  margin: 0 auto;
+  position: relative;
+
+  @include breakpoint($small) {
+    width: 100%;
+  }
+
+  &__wrapper {
+    @extend %clearfix;
+  }
+
+  &__item {
+    @extend %clearfix;
+
+    @include rem('margin-bottom', 40px);
+
+    position: relative;
+
+    &-submit {
+      @include rem('margin-bottom', 10px);
+
+      .disabled {
+        color: $med-gray;
+        border-color: $lighter-gray;
+        background-color: $lighter-gray;
+      }
+    }
+
+    &--select-store {
+      @include rem('margin-bottom', 30px);
+      @include rem('padding-bottom', 20px);
+
+      text-align: left;
+
+      .link {
+        @include rem('margin-top', 15px);
+        @include rem('margin-left', 40px);
+
+        display: block;
+      }
+
+      .store-link {
+        @include rem('margin-top', 5px);
+      }
+
+      .wfm-form__error-msg {
+        @include rem('left', 4rem);
+
+        top: auto;
+        bottom: 0;
+      }
+    }
+
+    &--checkbox {
+      @include rem('margin-bottom', 20px);
+
+      .error-msg {
+        @include rem('top', 65px);
+        @include rem('margin-left', 40px);
+
+        @include breakpoint($small) {
+          @include rem('bottom', -20px);
+
+          top: auto;
+          margin-left: 0;
+        }
+      }
+    }
+
+    &--recaptcha {
+      @include rem('margin-top', 35px);
+
+      margin-bottom: 0;
+      text-align: left;
+
+      .recaptcha-register {
+        @include rem('margin-bottom', 30px);
+
+        width: inherit;
+
+        @include breakpoint($small) {
+          @include rem('margin-bottom', 10px);
+        }
+
+        @include breakpoint($very-small) {
+          margin-bottom: 0;
+        }
+
+        div[style] {
+          display: block;
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        iframe {
+          transform: scale(1.25);
+          transform-origin: 0 0;
+
+          @include breakpoint($very-small) {
+            transform: scale(0.85);
+          }
+        }
+      }
+    }
+
+    .password-check {
+      @include rem('padding', 0 10px);
+      @include rem('margin-top', 5px);
+
+      display: flex;
+
+      @include breakpoint($small) {
+        @include rem('padding', 0 2px);
+        @include rem('font-size', 12px);
+      }
+
+      .icon {
+        @include rem('margin-right', 30px);
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &::before {
+          @include rem('width', 5px);
+          @include rem('height', 10px);
+          @include rem('margin-right', 10px);
+
+          content: '';
+          display: inline-block;
+          border: solid $border-gray;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+
+          @include breakpoint($small) {
+            @include rem('width', 3px);
+            @include rem('height', 6px);
+          }
+        }
+
+        &--pass::before {
+          border: solid $wf-link-green;
+          border-width: 0 2px 2px 0;
+        }
+      }
+    }
+  }
+
+  &__group {
+    .wfm-form__item {
+      float: left;
+      width: calc(50% - 10px);
+
+      &:first-child {
+        @include rem('margin-right', 20px);
+
+        @include breakpoint($small) {
+          margin-right: 0;
+        }
+      }
+
+      @include breakpoint($small) {
+        width: 100%;
+      }
+    }
+
+    &--three {
+      @include rem('margin-bottom', 10px);
+
+      @include breakpoint($small) {
+        margin-bottom: 0;
+      }
+
+      .wfm-form__item {
+        @include rem('margin-right', 20px);
+
+        float: left;
+        width: calc(100% / 3 - (40px / 3));
+
+        @include breakpoint($small) {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+
+          @include breakpoint($small) {
+            @include rem('margin-bottom', 30px);
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    @include rem('left', 10px);
+    @include rem('top', -14px);
+    @include rem('padding', 0 5px);
+
+    position: absolute;
+    margin: 0;
+    color: $wf-input;
+    background-color: $white;
+    z-index: 5;
+
+    &.screen-reader-text {
+      @include rem( 'width', 1px );
+      @include rem( 'height', 1px );
+      @include rem( 'right', 9999px );
+
+      overflow: hidden;
+      left: auto;
+    }
+  }
+
+  &__input {
+    &[type="text"],
+    &[type="tel"],
+    &[type="password"],
+    &[type="date"],
+    &[type="submit"] {
+      width: 100%;
+      border-radius: 0;
+
+      /* remvoe border radius in iPhone 7 */
+      -webkit-appearance: none;
+
+      &::-ms-clear {
+        display: none;
+      }
+
+      &::-ms-reveal {
+        display: none;
+      }
+    }
+
+    &[type="submit"] {
+      @include rem('width', 257px);
+      @include rem('font-size', 18px);
+      @include rem('border-radius', 20px);
+      @include rem('margin', 0 auto);
+
+      @include breakpoint($small) {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__select {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    appearance: none;
+    background-color: $white;
+
+    /* remvoe border radius in iPhone 7 */
+    -webkit-appearance: none;
+
+    &.error {
+      background-color: $wf-input-bg;
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+
+    &:checked + label {
+      svg.label-small {
+        &.checked {
+          display: block;
+        }
+
+        &.error,
+        &.unchecked {
+          display: none;
+        }
+      }
+
+      i.css-checkbox {
+        &.checked {
+          display: block;
+        }
+
+        &.error,
+        &.unchecked {
+          display: none;
+        }
+      }
+    }
+
+    &:focus + label {
+      i.css-checkbox,
+      svg.label-small {
+        outline: -webkit-focus-ring-color auto 4px;
+        outline: focus-ring-color;
+        outline-color: $light-gray;
+      }
+    }
+
+    &.error + label {
+      svg.label-small {
+        &.error {
+          display: block;
+        }
+
+        &.checked,
+        &.unchecked {
+          display: none;
+        }
+      }
+
+      i.css-checkbox {
+        &.error {
+          display: block;
+        }
+
+        &.checked,
+        &.unchecked {
+          display: none;
+        }
+      }
+    }
+
+    &:focus + label::before {
+      outline: auto 2px blue;
+      outline: auto 5px -webkit-focus-ring-color;
+    }
+  }
+
+  &__checkbox--label {
+    @include rem('padding', 0 25px 0 40px);
+
+    position: relative;
+    display: block;
+    line-height: 1.7;
+    font-weight: normal;
+    margin: 0;
+    color: $wf-input;
+    text-align: left;
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      display: inline-block;
+    }
+
+    i.css-checkbox {
+      @include rem('top', 6px);
+
+      font-size: 5px;
+      position: absolute;
+      left: 0;
+
+      &.error,
+      &.checked {
+        display: none;
+      }
+    }
+
+    svg.label-small {
+      @include rem('width', 25px);
+      @include rem('height', 25px);
+      @include rem('top', 6px);
+
+      position: absolute;
+      left: 0;
+
+      &.error,
+      &.checked {
+        display: none;
+      }
+    }
+
+    .label__link {
+      color: $wf-link-green;
+      text-decoration: underline;
+
+      &:hover {
+        color: $wf-ft-lnkHover;
+      }
+    }
+
+    .label__text {
+      @include rem('font-size', 22px);
+
+      display: block;
+      line-height: normal;
+    }
+
+    .store-address {
+      @include rem('font-size', 14px);
+
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    &.select-store {
+      @include rem('margin-bottom', 0);
+
+      position: relative;
+
+      svg.select-store {
+        @include rem('width', 25px);
+        @include rem('height', 35px);
+
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &__error-msg {
+    @include rem('top', 40px);
+    @include rem('margin-top', 10px);
+
+    position: absolute;
+    left: 0;
+    color: $wf-input-er;
+    text-align: left;
+
+    @include breakpoint($small) {
+      @include rem('font-size', 12px);
+    }
+
+    &--select-store {
+      @include rem('top', 70px);
+
+      margin: 0;
+    }
+
+    &--password {
+      @include rem('top', 60px);
+    }
+  }
+
+  .select__arrow {
+    @include rem('top', 18px);
+    @include rem('right', 15px);
+
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 10px 8px 0;
+    border-color: $wf-link-green transparent transparent;
+
+    &.error {
+      border-color: $wf-input-er transparent transparent;
+
+      &:focus {
+        background: $white;
+      }
+    }
+  }
+
+  &__hide-link {
+    &.link {
+      @include rem('right', 15px);
+      @include rem('padding', 14px 0);
+
+      position: absolute;
+      top: 0;
+      color: $wf-link-green;
+      text-transform: capitalize;
+    }
+  }
+
+  &__actions {
+    @include rem('padding', 20px 0);
+
+    clear: both;
+
+    > .action-btn {
+      @include rem('width', 257px);
+      @include rem('font-size', 18px);
+      @include rem('border-radius', 20px);
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}

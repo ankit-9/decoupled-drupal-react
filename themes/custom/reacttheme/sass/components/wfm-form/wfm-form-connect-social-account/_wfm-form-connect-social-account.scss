@@ -1,0 +1,101 @@
+// WFM connect social account page
+//
+// Markup: wfm-form-connect-social-account.twig
+//
+// Style guide: components.wfm-form.wfm-form-connect-social-account
+
+.social-account {
+  &__btn {
+    display: inline-block;
+  }
+
+  &__email {
+    display: inline-block;
+    color: $wf-ft-text;
+    word-wrap: break-word;
+  }
+
+  &__social {
+    @include rem('padding', 10px 0);
+
+    background-color: rgba(230, 230, 230, 0.75);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint($up-sm) {
+      @include rem('width', 340px);
+    }
+
+    @include breakpoint($small) {
+      @include rem('margin-left', -10px);
+      @include rem('margin-right', -10px);
+    }
+  }
+
+  .social-account {
+    &__form {
+      @include rem('margin-top', 40px);
+
+      &-input {
+        &--signin[type="button"] {
+          @include red-border-btn;
+        }
+
+        &[type="button"] {
+          @include rem('margin', 0 auto);
+          @include rem('font-size', 18px);
+          @include rem('border-radius', 20px);
+
+          text-transform: inherit;
+
+          @include breakpoint($up-sm) {
+            @include rem('width', 340px);
+          }
+
+          @include breakpoint($small) {
+            width: 100%;
+          }
+
+          @include breakpoint($very-small) {
+            @include rem('font-size', 16px);
+          }
+        }
+      }
+    }
+
+    &__submit-btn {
+      @include rem('margin-bottom', 20px);
+    }
+  }
+
+  .signinup-container {
+    &__text {
+      @include rem('font-size', 14px);
+
+      line-height: 1.4;
+
+      @include breakpoint($up-sm) {
+        @include rem('width', 340px);
+        @include rem('margin', 0 auto);
+      }
+    }
+
+    &__signin-text {
+      @include rem('font-size', 18px);
+
+      line-height: 1.4;
+    }
+  }
+}
+
+.social-account {
+  &.signinup-container {
+    &__title {
+      text-transform: capitalize;
+
+      &:first-child {
+        @include rem('margin-bottom', 0);
+      }
+    }
+  }
+}

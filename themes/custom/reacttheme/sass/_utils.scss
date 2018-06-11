@@ -1,0 +1,88 @@
+.element-invisible {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+%clearfix,
+.clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.display-block {
+  display: block;
+  color: both;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.visible-xs {
+  @include breakpoint($up-sm) {
+    display: none !important;
+  }
+}
+
+.visible-lg {
+  @include breakpoint($up-sm) {
+    display: block !important;
+  }
+}
+
+.hidden-xs {
+  display: none !important;
+
+  @include breakpoint($up-sm) {
+    display: block !important;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+.slidedown, .slideup  {
+  @include breakpoint($small) {
+    max-height: 0;
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.04s ease-in-out;
+    -moz-transition: max-height 0.04s ease-in-out;
+    -o-transition: max-height 0.04s ease-in-out;
+    transition: max-height 0.04s ease-in-out;
+  }
+}
+
+.slideup {
+  @include breakpoint($small) {
+    display: none;
+  }
+}
+
+.slidedown {
+  @include breakpoint($small) {
+    display: block;
+    max-height: 300px;
+  }
+}
+
+.inline-block {
+    display: inline-block !important;
+  }
+

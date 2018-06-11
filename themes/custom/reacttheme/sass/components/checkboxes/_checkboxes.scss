@@ -1,0 +1,64 @@
+// WFM CSS checkboxes
+//
+// Markup: checkboxes.twig
+//
+// Style guide: base.checkboxes
+
+.css-checkbox {
+  @include em('font-size', 12px);
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+
+    > * {
+      margin: (2/6) * 5em;
+    }
+  }
+
+  display: block;
+  position: relative;
+  width: (6/6) * 5em;
+  height: (6/6) * 5em;
+  border: 1px solid $wf-gray;
+  box-sizing: border-box;
+  border-radius: (0.7/6) * 5em;
+
+  &.css-checkbox--unchecked {
+    border-color: $wf-gray;
+  }
+
+  &.css-checkbox--error {
+    border-color: $wf-input-er;
+  }
+
+  &.css-checkbox--checked {
+    border-color: $wf-green;
+    background-color: $wf-green;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: (0.8/6) * 5em;
+      background-color: $white;
+      border-top-left-radius: (1.2/6) * 5em;
+      border-bottom-left-radius: (1.2/6) * 5em;
+    }
+
+    &::after {
+      width: (3.2/6) * 5em;
+      transform: rotateZ(135deg);
+      top: (2.4/6) * 5em; /* 2em */
+      left: (1.92/6) * 5em; /* 1.6em */
+    }
+
+    &::before {
+      width: (2/6) * 5em;
+      transform: rotateZ(45deg);
+      top: (2.88/6) * 5em; /* 2.4em */
+      left: (1.2/6) * 5em; /* 1em */
+    }
+  }
+}

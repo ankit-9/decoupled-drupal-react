@@ -1,0 +1,222 @@
+/**
+ * This file contains all the mixins used in the
+ * freerange theme and its style guide components.
+ * ---- INDEX ---
+ * # Basic Initial Mixins # base mixins.
+ * # Style Mixins # for defining standard styling.
+ * # Component Mixins # for theming components.
+ */
+
+/**
+ * 1. Basic and intial mixins ==================================
+ */
+
+/**
+ * 1.a. Mixin to parse any type to integer type.
+ */
+
+@function parseint($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+/**
+ * 1.b. Mixin to convert px to rem unit.
+ * Rem function assuming the base font size to be 10px.
+ * Function takes property name as the first argument and property value as the second argument
+ */
+
+@mixin rem($property, $values) {
+  $px : ();                                   /* Empty list for pxs */
+  $rem: ();                                   /* Empty list for rems */
+
+  @each $value in $values {                   /* Iterate through each values passed */
+
+    @if $value == 0 or $value == auto {       /* If value is 0 or auto, simply adds them to the list. */
+      $px : append($px, $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);                     /* Extract the unit value */
+      $val: parseint($value);                  /* Get the typecasted integer value using parseint() */
+
+      @if $unit == "px" {                      /* If unit passed is in px */
+        $px : append($px, $value);             /* Dont change for px value */
+        $rem: append($rem, ($val / 10 + rem)); /* For rem value - divide the integer pixel vaule by 10 and add 'rem' in the last. */
+      }
+
+      @if $unit == "rem" {                     /* If unit passed is in rem */
+        $px : append($px, ($val * 10 + px));   /* For px value - multiply the integer pixel vaule by 10 and add 'px' in the last. */
+        $rem: append($rem, $value);            /* Dont change for rem value */
+      }
+    }
+  }
+
+  @if $px == $rem {                            /* If both properties are same print only one of them  */
+    #{$property}: $px;
+  }
+
+  @else {                                      /* Other wise print both the values with property */
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+/**
+ * 1.c. Mixin to convert px to em unit.
+ * EM function assuming the parent font size to be 14px.
+ * Function takes property name as the first argument and property value as the second argument
+ */
+
+@mixin em($property, $values) {
+  $px : ();                                 /* Empty list for pxs */
+  $em: ();                                  /* Empty list for em */
+
+  @each $value in $values {                 /* Iterate through each values passed */
+
+    @if $value == 0 or $value == auto {     /* If value is 0 or auto, simply adds them to the list. */
+      $px : append($px, $value);
+      $em: append($em, $value);
+    }
+
+    @else {
+      $unit: unit($value);                   /* Extract the unit value */
+      $val: parseint($value);                /* Get the typecasted integer value using parseint() */
+
+      @if $unit == "px" {                    /* If unit passed is in px */
+        $px : append($px, $value);           /* Dont change for px value */
+        $em: append($em, ($val / 14 + em));  /* For em value - divide the integer pixel vaule by 14 and add 'em' in the last. */
+      }
+
+      @if $unit == "em" {                    /* If unit passed is in em */
+        $px : append($px, ($val * 14 + px)); /* For px value - multiply the integer pixel vaule by 14 and add 'px' in the last. */
+        $em: append($em, $value);            /* Dont change for em value */
+      }
+    }
+  }
+
+  @if $px == $em {                            /* If both properties are same print only one of them  */
+    #{$property}: $px;
+  }
+
+  @else {                                     /* Other wise print both the values with property */
+    #{$property}: $px;
+    #{$property}: $em;
+  }
+}
+
+/**
+ * 2. Style based mixins =======================================
+ */
+
+/**
+ * 2.a. Mixin for translucent background
+ */
+
+@mixin opac-color($r, $g, $b, $pertc) {
+  background: rgb($r, $g, $b);
+  background: rgba($r, $g, $b, $pertc);
+}
+
+/**
+ * 2.b. Mixin for intial border radius
+ */
+
+@mixin borderradius($px: 5px) {
+  border-radius: $px;
+  // background-clip: padding-box;
+}
+
+/**
+ * 3. Components mixins ========================================
+ */
+
+/**
+ * 3.a. Mixin for styling submit and CTA buttons (red theme)
+ */
+
+@mixin btn-red {
+  @include center-align;
+  @include rem('height', 45px);
+  @include rem('padding', 7px 0);
+  @include rem('font-size', 18px);
+  @include rem('border-width', 1px);
+  @include rem('border-radius', 20px);
+
+  width: inherit;
+  color: $white;
+  border-style: solid;
+  border-color: $wf-submit;
+  background-color: $wf-submit;
+  font-family: $avenier-next;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+/**
+ * 3.b. Mixin for basic link styling
+ */
+
+@mixin link {
+  @include rem( 'font-size', 14px );
+
+  color: $wf-link-green;
+  font-family: $avenier-next;
+  text-align: left;
+
+  &:hover {
+    color: $wf-ft-lnkHover;
+    text-decoration: underline;
+  }
+}
+
+/**
+ * 3.c. Mixin for the button having red border with white background.
+ * eg: social account signin page.
+ */
+
+@mixin red-border-btn {
+  color: $wf-submit;
+  border-color: $wf-submit;
+  background-color: $white;
+
+  &:hover {
+    color: $wf-submit;
+    text-decoration: none;
+  }
+}
+
+/**
+ * 3.d. Base mixin for alignment of element.
+ */
+
+@mixin center-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+ * 3.e. Base mixin for Region spacing.
+ */
+
+@mixin region-spacer($color, $direction: bottom) {
+  border-top: 1px dotted $color;
+
+  @if $direction == top {
+    padding-top: 25px;
+    margin-top: 25px;
+  }
+
+  @else {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+}

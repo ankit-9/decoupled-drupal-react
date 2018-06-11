@@ -1,0 +1,104 @@
+// WFM Coupons - Digital Coupons
+//
+// Markup: digital-coupons.twig
+//
+// Style guide: components.coupons.digital-coupons
+
+.digital-coupons {
+  @include em('padding', 0 10px 10px);
+  @include em('max-width', 600px);
+
+  color: $strong-gray;
+  text-align: center;
+  margin: 0 auto;
+
+  &__title {
+    @include em('font-size', 24px);
+
+    padding: 0;
+    font-family: $cooper-bt;
+    line-height: 1.2em;
+    font-weight: bold;
+    color: $default;
+
+    @include breakpoint($up-sm) {
+      @include em('font-size', 48px);
+    }
+  }
+
+  &__content {
+    @include em('font-size', 14px);
+
+    margin: 0.71428571em 0;
+    font-family: $avenier-next;
+    line-height: 1.28571429em;
+
+    @include breakpoint($up-sm) {
+      @include em('font-size', 17px);
+
+      margin: 0.58823529em 0;
+      line-height: 1.25em;
+    }
+  }
+
+  a {
+    &.digital-coupons__link {
+      @include link;
+
+      font-size: 1em;
+      text-decoration: underline;
+      line-height: 1.64705882em;
+      cursor: pointer;
+    }
+  }
+
+  &__graphic {
+    @include em('padding-top', 10px);
+
+    margin-bottom: 20px;
+
+    svg {
+      width: 90%;
+      max-width: 600px;
+
+      @include breakpoint($up-sm) {
+        height: 170px;
+      }
+    }
+  }
+
+  &.coupons-error {
+    .coupons-msg__title {
+      @include rem('margin-bottom', 20px);
+    }
+
+    .coupons-msg__text {
+      margin: 0 auto;
+
+      &.red {
+        @include rem('font-size', 14px);
+
+        @include breakpoint($up-sm) {
+          @include rem('font-size', 18px);
+        }
+
+        color: $wf-input-er;
+      }
+
+      a {
+        text-decoration: underline;
+        color: $wf-link-green;
+      }
+    }
+
+    .coupons-msg__button.link {
+      @include rem('margin', 20px auto);
+
+      svg {
+        @include rem('width', 16px);
+        @include rem('height', 16px);
+        @include rem('margin-left', 5px);
+      }
+    }
+  }
+}

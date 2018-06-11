@@ -1,0 +1,100 @@
+// WFM Footer Below
+//
+// Markup: wfm-footer-below.twig
+//
+// Style guide: components.wfm-footer.wfm-footer-below
+
+.footer__block {
+  .below-menu {
+    @extend %clearfix;
+
+    @include em( 'padding', 35px 0);
+
+    text-align: center;
+
+    @include breakpoint($small) {
+      @include em( 'padding', 28px 0 );
+    }
+
+    .below-menu-navbar {
+      padding: 0;
+      margin: 0;
+    }
+
+    .below-menu-nav {
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      -webkit-font-smoothing: antialiased;
+
+      @include breakpoint($small) {
+        @include em( 'margin', 5px 0 );
+      }
+
+      &-item {
+        display: inline;
+        margin: 0;
+        padding: 0;
+
+        & ~ li::before {
+          content: " | ";
+          display: inline;
+        }
+
+        @include breakpoint($up-sm) {
+          &:nth-last-child(2)::before {
+            content: " ";
+          }
+
+          &:nth-last-child(3)::after {
+            content: "\A";
+            white-space: pre;
+          }
+        }
+
+        @include breakpoint($small) {
+          &:nth-child(2n + 1)::before {
+            content: " ";
+          }
+
+          &:nth-child(2n)::after {
+            content: "\A";
+            white-space: pre;
+          }
+        }
+      }
+
+      &-link {
+        @include em('font-size', 13px );
+        @include em('padding', 0 6px 6px);
+
+        color: $wf-link-green;
+        font-family: $avenier-next;
+        text-decoration: underline;
+        display: inline-block;
+
+        @include breakpoint($small) {
+          @include em( 'font-size', 12px );
+        }
+
+        &:hover {
+          color: $wf-ft-lnkHover;
+        }
+      }
+    }
+
+    .below-menu-text {
+      @include em('font-size', 13px );
+
+      margin: 0.8em 0;
+      padding: 0;
+      font-family: $avenier-next;
+
+      @include breakpoint($small) {
+        @include em('font-size', 12px );
+
+        margin: 0.4em 0;
+      }
+    }
+  }
+}

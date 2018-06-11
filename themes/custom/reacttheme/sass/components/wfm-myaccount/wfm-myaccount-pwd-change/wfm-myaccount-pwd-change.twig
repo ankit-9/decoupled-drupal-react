@@ -1,0 +1,42 @@
+<div class="my-account__container clearfix">
+  <div class="my-account__popup">
+    <div class="my-account__popup-header">
+      <button class="my-account__popup-close" title="Close the popup">
+        <span class="hidden"> Close </span>
+        <svg class="svg-X-close-red-dims">
+          <use xlink:href="#X-close-red"></use>
+        </svg>
+      </button>
+      <div class="my-account__popup-title">
+        Change Password
+      </div>
+    </div>
+    <div class="my-account__popup-container">
+      <div class="wfm-form__wrapper">
+        <div class="wfm-form">
+          <form action="#" >
+            <div class="wfm-form__item signup-form__item">
+              <label for="password-current" class="wfm-form__label">Current Password</label>
+              <input type="password" name="password" class="wfm-form__input signup-form__input error" id="password-current" value="123213123" aria-describedby="password-error-message-current" required="true">
+              <span class="wfm-form__error-msg" id="password-error-message-current">Lorem ipsum dolor sit amet.</span>
+            </div>
+            <div class="wfm-form__item signup-form__item">
+              <label for="password-ch" class="wfm-form__label signup-form__label error">Password</label>
+              <input type="password" name="password" class="wfm-form__input signup-form__input error" id="password-ch" placeholder="Password" aria-describedby="password-error-message-ch" required="true">
+              <a href="javascript:void(0)" class="wfm-form__hide-link signup-form__hide-link link" aria-label="Toggle Password Show Hide" aria-checked="false" role="switch"> Hide</a>
+              <div class="password-check">
+                <span class='icon icon--pass'>Letters</span>
+                <span class='icon'>Numbers</span>
+                <span class='icon icon--pass'>8+ Characters</span>
+              </div>
+              <span class="wfm-form__error-msg wfm-form__error-msg--password signup-form__error-msg" id="password-error-message-ch">Lorem ipsum dolor sit amet.</span>
+            </div>
+            <div class="wfm-form__item wfm-form__item-submit clearfix">
+              <input type="submit" value="Change Password" class="wfm-form__input disabled">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

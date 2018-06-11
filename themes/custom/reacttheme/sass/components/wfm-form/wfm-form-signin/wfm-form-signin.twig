@@ -1,0 +1,62 @@
+<div class="signinup__wrapper clearfix">
+  <div class="signinup-container signin">
+    <h1 class="signinup-container__title">Sign in</h1>
+    <div class="signinup__social">
+      <div class="signinup-container__social">
+        <a href="javascript:void(0)" class="signinup-container__social-btn" roll="button" aria-controls="Facebook Social Login Button">
+          <span class="visually-hidden">Facebook Social Login</span>
+          <svg class="svg-social-icon-facebook-dims icon">
+            <use xlink:href="#social-icon-facebook"></use>
+          </svg>
+        </a>
+        <a href="javascript:void(0)" class="signinup-container__social-btn" roll="button" aria-controls="Google Login Button">
+          <span class="visually-hidden">Google Login Button</span>
+          <svg class="svg-social-icon-google-dims icon">
+            <use xlink:href="#social-icon-google"></use>
+          </svg>
+        </a>
+        <a href="javascript:void(0)" class="signinup-container__social-btn" roll="button" aria-controls="Yahoo Login Button" @click="socialLoginType('Yahoo')">
+          <span class="visually-hidden">Yahoo Login Button</span>
+          <svg class="svg-social-icon-yahoo-dims icon">
+            <use xlink:href="#social-icon-yahoo"></use>
+          </svg>
+        </a>
+        <a href="javascript:void(0)" class="signinup-container__social-btn" roll="button" aria-controls="Twitter Login Button" @click="socialLoginType('Twitter')">
+          <span class="visually-hidden">Twitter Login Button</span>
+          <svg class="svg-social-icon-twitter-dims icon">
+            <use xlink:href="#social-icon-twitter"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="signinup-container__divider">
+        <span class="signinup-container__divider-line"></span>
+        <span class="signinup-container__divider-btn">OR</span>
+        <span class="signinup-container__divider-line"></span>
+    </div>
+    <div class="wfm-form__wrapper">
+      <div class="wfm-form signin-form">
+        <form action="#" >
+          <div class="wfm-form__item signin-form__item">
+            <label for="email-address" class="wfm-form__label signin-form__label error" >Email Address</label>
+            <input type="text" name="email-address" class="wfm-form__input signin-form__input error" id="email-address" placeholder="Email Address" aria-describedby="email-error-message" required="true">
+            <span class="wfm-form__error-msg signin-form__error-msg" id="email-error-message">Please provide a valid email address.</span>
+          </div>
+          <div class="wfm-form__item signin-form__item">
+            <label for="password" class="wfm-form__label signin-form__label screen-reader-text">Password</label>
+            <input type="password" name="password" class="wfm-form__input signin-form__input" id="password" placeholder="Password" aria-describedby="password-error-message" required="true">
+            <a href="javascript:void(0)" class="wfm-form__hide-link signin-form__hide-link link" data-action="aria-switch" aria-label="Toggle Password Show Hide" aria-checked="false" role="switch"> Hide</a>
+             <span class="wfm-form__error-msg signin-form__error-msg hidden" id="password-error-message">Please provide a valid email address.</span>
+          </div>
+          <div class="wfm-form__item wfm-form__item-submit signin-form__item">
+            <input type="submit" value="sign in" class="wfm-form__input signin-form__input">
+          </div>
+        </form>
+        <div class="signinup__below">
+          <p class="signinup__below__text">Don't have an account? <a href="#" class="signinup__below__link">Create One now</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,114 @@
+
+// WFM Coupons - Introductory Coupons Block.
+//
+// Markup: coupons-intro-block.twig
+//
+// Style guide: components.coupons.coupons-intro-block
+
+.coupons-int-card {
+  position: relative;
+  border: 10px solid $wf-coupons-grey-bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: $wf-light-green;
+  box-sizing: border-box;
+
+  &__header {
+    @include rem('font-size', 18px);
+    @include rem('padding', 10px);
+
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $white;
+    background: $wf-link-green;
+    font-family: $avenier-next;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__date {
+    @include center-align;
+    @include rem('font-size', 14px);
+
+    font-family: $avenier-next;
+  }
+
+  &__content {
+    @include rem('padding', 20px 0);
+
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+
+    @include breakpoint($up-sm) {
+      padding: 40px 0;
+    }
+  }
+
+  &__welcome {
+    @include rem('font-size', 38px);
+
+    color: $wf--header-green;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      height: 10px;
+      width: 100%;
+      background: url(../compressed-images/homepage-block-border.png) center center repeat-x;
+
+      @include breakpoint($up-sm) {
+        top: 20px;
+      }
+    }
+
+    span {
+      @include rem('padding', 0 10px);
+
+      background: $white;
+      display: inline-block;
+      padding: 0 10px;
+      font-family: $cooper-bt;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__off {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: $wf--header-green;
+  }
+
+  &__off-percentage {
+    @include rem('font-size', 178px);
+
+    font-family: $avenier-next;
+  }
+
+  &__off-detail-text {
+    @include rem('font-size', 100px);
+
+    font-family: $avenier-next;
+  }
+
+  &__off-detail-subtext {
+    @include rem('font-size', 26px);
+
+    font-family: $avenier-next;
+    font-weight: normal;
+  }
+}

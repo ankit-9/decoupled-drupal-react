@@ -1,0 +1,119 @@
+<div class="signinup__wrapper clearfix">
+  <div class="signinup-container signup">
+    <h1 class="signinup-container__title">Register</h1>
+    <div class="signinup__social">
+      <p class="signinup-container__text  rg-hidden">Register with your social account or complete the form below.</p>
+      <div class="signinup-container__social">
+        <a href="javascript:void(0)" class="signinup-container__social-btn" roll="button" aria-controls="Facebook Social Login Button">
+          <span class="visually-hidden">Facebook Social Login</span>
+          <svg class="svg-social-icon-facebook-dims icon">
+            <use xlink:href="#social-icon-facebook"></use>
+          </svg>
+        </a>
+        <a href="javascript:void(0)" class="signinup-container__social-btn" roll="button" aria-controls="Google Login Button">
+          <span class="visually-hidden">Google Login Button</span>
+          <svg class="svg-social-icon-google-dims icon">
+            <use xlink:href="#social-icon-google"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="signinup-container__divider">
+        <span class="signinup-container__divider-line"></span>
+        <span class="signinup-container__divider-btn">OR</span>
+        <span class="signinup-container__divider-line"></span>
+    </div>
+    <div class="wfm-form__wrapper">
+      <div class="wfm-form signup-form">
+        <p class="form__description" >All Fields are Required</p>
+        <form action="#" >
+          <div class="wfm-form__item signup-form__item">
+            <label for="email-address-rg" class="wfm-form__label signup-form__label screen-reader-text" >Email Address</label>
+            <input type="text" name="email-address" class="wfm-form__input signup-form__input" id="email-address-rg" placeholder="Email Address" aria-describedby="email-error-message-rg" required="true">
+            <span class="wfm-form__error-msg signup-form__error-msg hidden" id="email-error-message-rg">Lorem ipsum dolor sit amet.</span>
+          </div>
+          <div class="wfm-form__item signup-form__item wfm-form__item-password">
+            <label for="password-rg" class="wfm-form__label signup-form__label error">Password</label>
+            <input type="password" name="password" class="wfm-form__input signup-form__input error" id="password-rg" placeholder="Password" aria-describedby="password-error-message-rg" required="true">
+            <a href="javascript:void(0)" class="wfm-form__hide-link signup-form__hide-link link" aria-label="Toggle Password Show Hide" aria-checked="false" role="switch"> Hide</a>
+            <div class="password-check">
+              <span class='icon icon--pass'>Letters</span>
+              <span class='icon'>Numbers</span>
+              <span class='icon icon--pass'>8+ Characters</span>
+            </div>
+            <span class="wfm-form__error-msg wfm-form__error-msg--password signup-form__error-msg" id="password-error-message-rg">Lorem ipsum dolor sit amet.</span>
+          </div>
+
+          <div class="wfm-form__group--three clearfix">
+            <p class="form__description" >Saving is easy! Just provide your phone number for a faster checkout.</p>
+            <div class="wfm-form__item signup-form__item">
+              <label for="phone-number" class="wfm-form__label signup-form__label error" >Phone Number</label>
+              <input type="text" name="phone" class="wfm-form__input signup-form__input error" id="phone-number" placeholder="Phone Number" aria-describedby="phone-error-message" required="true">
+              <span class="wfm-form__error-msg signup-form__error-msg" id="phone-error-message">Lorem ipsum dolor sit amet.</span>
+            </div>
+            <div class="wfm-form__item signup-form__item">
+              <label for="zip-code" class="wfm-form__label signup-form__label error" >5-Digit ZIP Code</label>
+              <input type="text" name="zip-code" class="wfm-form__input signup-form__input error" id="zip-code" placeholder="Zip Code" aria-describedby="zip-error-message" required="true">
+              <span class="wfm-form__error-msg signup-form__error-msg" id="zip-error-message">Lorem ipsum dolor sit amet Lorem ipsum.</span>
+            </div>
+            <div class="wfm-form__item signup-form__item">
+              <label for="house-hold-size" class="wfm-form__label signup-form__label error" >Household Size</label>
+              <select class="wfm-form__select signup-form__select error" name="section1" id="house-hold-size" aria-describedby="hosue-hold-error-message" required="true">
+                <option label="First select" disabled="" selected="">House Hold</option>
+                <option label="1">1</option>
+                <option label="2">2</option>
+                <option label="3">3</option>
+                <option label="4">4</option>
+                <option label="5">5</option>
+                <option label="6+">6+</option>
+              </select>
+              <div class="select__arrow error"></div>
+              <span class="wfm-form__error-msg signup-form__error-msg" id="hosue-hold-error-message">Lorem ipsum dolor sit amet Lorem ipsum.</span>
+            </div>
+          </div>
+          <div class="wfm-form__item wfm-form__item--select-store signup-form__item sel">
+            <input type="hidden" class="wfm-form__checkbox signup-form__checkbox hidden"  name="select-store" id="select-store" />
+            <label for="select-store" class="wfm-form__checkbox--label signup-form__checkbox--label select-store">
+              <svg class="select-store"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pin_m"></use></svg>
+              <span class="label__text">My Store</span>
+              <p class="store-address">Your closest store is: <span class="bold">Indian School Plaza</span>, 525 N Lamar Blvd., Austin, Texas</p>
+            </label>
+            <a href="#1" class="signinup__below__link link">Select a store (required)</a>
+          </div>
+          <div class="wfm-form__item wfm-form__item--checkbox signup-form__item">
+            <input type="checkbox" class="wfm-form__checkbox signup-form__checkbox"  name="day" id="newsletter-subscription" value="morning" required="true" />
+            <label for="newsletter-subscription" class="wfm-form__checkbox--label signup-form__checkbox--label">
+              <i class="css-checkbox css-checkbox--unchecked unchecked">
+              </i>
+              <i class="css-checkbox css-checkbox--error error">
+              </i>
+              <i class="css-checkbox css-checkbox--checked checked">
+              </i>
+              Get meal-lanning inspiration, sales and coupons plus news from our foundations delivered to your inbox every week.
+            </label>
+          </div>
+          <div class="wfm-form__item wfm-form__item--checkbox signup-form__item">
+            <input type="checkbox" class="wfm-form__checkbox signup-form__checkbox"  name="day" id="terms-conditions" value="morning" required="true" aria-describedby="terms-conditions-error-message" />
+            <label for="terms-conditions" class="wfm-form__checkbox--label signup-form__checkbox--label">
+              <i class="css-checkbox css-checkbox--unchecked unchecked">
+              </i>
+              <i class="css-checkbox css-checkbox--error error">
+              </i>
+              <i class="css-checkbox css-checkbox--checked checked">
+              </i>
+              I have reviewed and agree to the Whole Foods Market Rewards <a href="javascript:void(0)" class="label__link">Terms & Conditions</a>, the Whole Foods Market <a href="javascript:void(0)" class="label__link">Privacy Policy</a> and the Whole Foods Market <a href="javascript:void(0)" class="label__link">Terms of Use</a>.
+            </label>
+            <span class="wfm-form__error-msg signup-form__error-msg error-msg" id="terms-conditions-error-message">Lorem ipsum dolor sit ipsum dolor.</span>
+          </div>
+          <div class="wfm-form__item signup-form__item wfm-form__item--recaptcha">
+            <img alt="recaptcha" src="/themes/custom/freerange/compressed-images/recaptcha.png" />
+          </div>
+          <div class="wfm-form__item wfm-form__item-submit signup-form__item clearfix">
+            <input type="submit" value="Join now" class="wfm-form__input signup-form__input disabled">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

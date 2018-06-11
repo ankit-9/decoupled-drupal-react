@@ -1,0 +1,96 @@
+//////////////////////////////////
+// Primary Container Rules ///////
+//////////////////////////////////
+
+.cog-papge {
+  width: 100%;
+}
+
+.cog--mq {
+  @include container(90em);
+  @include rem('padding', 0 20px);
+
+  margin: 0 auto;
+  background-color: $white;
+  box-sizing: border-box;
+}
+
+.cog--mq-fluid {
+  @include rem('padding', 0 20px );
+
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.main-wrapper {
+  overflow: hidden;
+}
+
+.mq-main {
+  overflow: hidden;
+}
+
+.mq-footer {
+  @include rem('border-top', 1px);
+
+  border-style: solid;
+  border-color: $light-gray;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.content-area-full-bleed {
+  max-width: calc(90em - 40px);
+  margin: 0 auto;
+}
+
+.content-area-container {
+  @include rem('margin-bottom', 20px);
+
+  @include breakpoint($up-sm) {
+    @include rem('margin-bottom', 40px);
+  }
+
+  max-width: 82em;
+}
+
+.header__container,
+.region-header {
+  @extend %clearfix;
+
+  position: relative;
+  border: 0;
+
+  @include breakpoint($up-sm) {
+    @include em('height', 70px);
+  }
+
+  @include breakpoint($large) {
+    padding: 0;
+  }
+
+  @include breakpoint($small) {
+    padding: 0;
+    margin: 0;
+  }
+
+  .contextual-region {
+    position: static;
+  }
+
+  .contextual {
+    display: none;
+  }
+}
+
+.frontpage {
+  #content {
+    @include rem('margin-bottom', 20px);
+
+    @include breakpoint($up-sm) {
+      @include rem('margin-bottom', 70px);
+    }
+  }
+}

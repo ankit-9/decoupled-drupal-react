@@ -1,0 +1,155 @@
+// WFM Page Error
+//
+// Style guide: components.wfm-page-errors
+.page-er {
+  &__container {
+    @extend %clearfix;
+
+    @include rem('min-height', 600px);
+    @include rem('margin', 40px 0 60px);
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include breakpoint($small) {
+      @include rem('margin', 0 0 40px);
+
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    &-left {
+      @include rem('margin-bottom', 15px);
+
+      width: 100%;
+      padding-left: 0;
+      padding-top: 0;
+
+      @include breakpoint($up-sm) {
+        @include rem('padding-left', 30px);
+
+        width: 40%;
+        box-sizing: border-box;
+      }
+
+      @include breakpoint($large) {
+        @include rem('padding-top', 10px);
+        @include rem('padding-left', 70px);
+        @include rem('padding-right', 30px);
+
+        width: 50%;
+      }
+
+      .number-svg {
+        width: 100%;
+        height: 100%;
+        max-height: 220px;
+
+        @include breakpoint($small) {
+          height: 90px;
+          width: 180px;
+        }
+
+        @include breakpoint($medium) {
+          @include rem('max-height', 112px);
+
+          height: auto;
+        }
+      }
+    }
+
+    &-right {
+      width: 60%;
+
+      @include breakpoint($small) {
+        width: 100%;
+      }
+
+      @include breakpoint($large) {
+        width: 50%;
+      }
+    }
+
+    .page-er {
+      &__title {
+        @include rem('margin', 0 0 35px);
+        @include rem('font-size', 40px);
+
+        padding: 0;
+        font-family: $cooper-bt;
+        font-weight: 600;
+        line-height: 1.2;
+        color: $blk;
+
+        @include breakpoint($small) {
+          @include rem('margin', 0 0 25px);
+          @include rem('font-size', 24px);
+        }
+
+        @include breakpoint($large) {
+          @include rem('font-size', 48px);
+        }
+      }
+
+      &__message {
+        @include rem('margin-bottom', 30px);
+
+        display: block;
+        font-family: $avenier-next;
+
+        @include breakpoint($small) {
+          @include rem('margin-bottom', 20px);
+        }
+
+        &-title {
+          @include rem('margin-bottom', 25px);
+          @include rem('font-size', 16px);
+
+          display: block;
+          padding: 0;
+          font-family: $avenier-next;
+          font-weight: 500;
+          color: $wf-ft-title;
+
+          @include breakpoint($small) {
+            @include rem('margin-bottom', 10px);
+          }
+        }
+
+        &-nav {
+          @include rem('margin-left', 30px);
+
+          display: block;
+          box-sizing: border-box;
+          list-style-type: disc;
+          list-style-position: outside;
+
+          @include breakpoint($small) {
+            @include rem('margin-left', 25px);
+          }
+        }
+
+        &-item {
+          @include rem('font-size', 16px);
+          @include rem('margin', 6px 0);
+
+          font-family: $avenier-next;
+          color: $wf-ft-title;
+        }
+
+        &-link {
+          @include rem('font-size', 16px);
+
+          font-family: $avenier-next;
+          font-weight: 500;
+          color: $wf-link-green;
+          text-decoration: underline;
+
+          &:hover {
+            color: $wf-ft-lnkHover;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,439 @@
+// WFM Header Search
+//
+// Markup: wfm-header-search.twig
+//
+// Style guide: components.wfm-header.wfm-header-search
+
+.header__block--search {
+  position: relative;
+  display: block;
+  clear: both;
+  width: 100%;
+
+  .search-header {
+    &__link {
+      @include em('width', 30px);
+      @include em('height', 30px);
+      @include em('top', -32px);
+      @include em('right', 45px);
+
+      position: absolute;
+      border: 0 !important;
+      overflow: visible !important;
+      text-decoration: none;
+
+      @include breakpoint($up-sm) {
+        @include em('top', -55px);
+
+        right: 0;
+      }
+
+      @include breakpoint($medium) {
+        @include em('top', -50px);
+      }
+
+      .svg-search-icon-dims {
+        @include em('width', 30px);
+        @include em('height', 30px);
+
+        background-color: transparent;
+        transform: scale(1);
+        transition: all 0.2s cubic-bezier(0, 0, 0, 0.4);
+
+        &:focus,
+        &:hover {
+          border-radius: 0;
+          border: 0;
+          background-color: transparent;
+          transform: scale(1.1);
+          box-shadow: none;
+          fill: $wf-gray;
+        }
+      }
+    }
+  }
+
+  .search-form {
+    @include em('padding', 20px);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(230, 230, 230, 0.75);
+    box-sizing: border-box;
+    z-index: 98;
+
+    @include breakpoint($small) {
+      @include em('margin-top', 10px);
+      @include em('padding', 15px);
+      @include em('left', -20px);
+      @include em('right', -20px);
+
+      z-index: 99;
+    }
+
+    &__item {
+      position: relative;
+      display: inline-block;
+      width: 70%;
+      float: right;
+      font-size: $base-font-size-ems;
+
+      @include breakpoint($small) {
+        width: 100%;
+      }
+    }
+
+    &__input {
+      @include em('font-size', 20px);
+      @include em('border-width', 1px);
+      @include em('border-radius', 50px);
+
+      padding-left: 1.2em;
+      padding-right: 2em;
+      height: 2.75em;
+      width: 100%;
+      margin: 0;
+      font-family: $avenier-next;
+      font-weight: 500;
+      border-color: $search-border;
+      border-style: solid;
+      box-sizing: border-box;
+
+      @include breakpoint($medium) {
+        height: 2.5em;
+      }
+
+      @include breakpoint($small) {
+        @include em('border-radius', 30px);
+        @include em('padding-right', 20px);
+        @include em('padding-left', 20px);
+        @include em('font-size', 14px);
+
+        width: 100%;
+        height: 3em;
+      }
+
+      @include breakpoint($very-small) {
+        @include em('font-size', 12px);
+
+        padding-right: 0.833em;
+        padding-left: 0.833em;
+        height: 3.4em;
+      }
+
+      @media only screen and (max-device-width: 330px) {
+        height: 3em;
+      }
+    }
+
+    &__enter-text {
+      @include em('font-size', 14px);
+      @include em('padding-top', 5px);
+
+      float: right;
+      clear: both;
+      color: $blk;
+    }
+  }
+
+  .autocomplete-list {
+    position: absolute;
+    left: 30%;
+
+    @include breakpoint($small) {
+      left: 0;
+      right: 0;
+    }
+
+    @include breakpoint($very-small) {
+      font-size: 12px;
+    }
+
+    &__items {
+      @include em('margin', 55px 0 0 25px);
+      @include em('width', 350px);
+
+      position: absolute;
+      left: 0;
+      padding: 0;
+      background: $white;
+      list-style: none;
+
+      @include breakpoint($medium) {
+        @include em('margin-top', 50px);
+      }
+
+      @include breakpoint($small) {
+        @include em('margin', 35px auto 0 auto);
+
+        width: 86%;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &__item {
+      @include em('padding', 5px 10px);
+
+      margin: 0;
+      font-family: $avenier-next;
+      font-weight: 500;
+
+      @include breakpoint($very-small) {
+        @include em('font-size', 12px);
+      }
+
+      &:hover {
+        background-color: $menu_bg;
+        cursor: pointer;
+      }
+
+      &:last-child {
+        @include em('margin-bottom', 10px);
+      }
+
+      &.selected {
+        background-color: $menu_bg;
+        cursor: pointer;
+      }
+    }
+
+    &__fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__hidden-input {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+}
+
+.block-wfm8-header {
+  padding: 0;
+
+  @media only screen and (max-width: 1024px) {
+    @include em('padding', 0 20px);
+  }
+
+  @media only screen and (max-device-width: 330px) {
+    font-size: 20px !important;
+  }
+
+  .wfm8-header {
+    #block-freerange-branding,
+    #block-vuejsintegrationblock,
+    #block-freerange-main-menu,
+    #block-vuejsintegrationblock-header-search,
+    .modal__mask {
+      font-size: 14px !important;
+
+      @media only screen and (max-device-width: 420px) {
+        font-size: 22px !important;
+      }
+
+      @media only screen and (max-device-width: 330px) {
+        font-size: 26px !important;
+      }
+    }
+
+    #block-vuejsintegrationblock {
+      position: relative;
+    }
+
+    .header__block--menu-top,
+    .header__block--menu,
+    .search-header__link {
+      @include breakpoint($small) {
+        padding-right: 0 !important;
+      }
+    }
+
+    .header__block--menu-top {
+      @include breakpoint($small) {
+        margin-top: -0.5em;
+      }
+
+      .menu-top {
+        &__navbar {
+          @include breakpoint($small) {
+            font-size: 14px !important;
+          }
+
+          @media only screen and (max-device-width: 420px) {
+            font-size: 22px !important;
+          }
+
+          @media only screen and (max-device-width: 330px) {
+            font-size: 26px !important;
+          }
+        }
+
+        &__nav {
+          @include breakpoint($small) {
+            white-space: nowrap;
+            margin-top: 5px;
+            font-size: 14px !important;
+          }
+
+          @media only screen and (max-device-width: 420px) {
+            font-size: 22px !important;
+          }
+
+          @media only screen and (max-device-width: 330px) {
+            font-size: 26px !important;
+          }
+        }
+
+        &__link {
+          @include breakpoint($small) {
+            padding-left: 0.3em;
+            padding-right: 0.4em;
+            font-size: 1.2em !important;
+          }
+
+          @media only screen and (max-device-width: 420px) {
+            font-size: 1.15em !important;
+          }
+
+          @media only screen and (max-device-width: 330px) {
+            font-size: 1.1em !important;
+          }
+        }
+
+        &__item {
+          &.menu-top__span,
+          &:last-child {
+            .menu__link {
+              @include breakpoint($small) {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #block-freerange-branding {
+      @include breakpoint($small) {
+        font-size: 20px !important;
+      }
+
+      .header__block--logo {
+        @include breakpoint($small) {
+          margin-left: -0.7em;
+          font-size: 10px !important;
+        }
+
+        @media only screen and (max-device-width: 420px) {
+          margin-left: -1em;
+          max-width: 16em;
+        }
+
+        @media only screen and (max-device-width: 380px) {
+          max-width: 18em;
+        }
+
+        @media only screen and (max-device-width: 330px) {
+          max-width: 16em;
+        }
+
+        .logo__img {
+          @media only screen and (max-device-width: 420px) {
+            max-height: 155px;
+            height: 16em;
+            margin-top: -2em;
+          }
+
+          @media only screen and (max-device-width: 380px) {
+            max-height: 180px;
+            height: 17em;
+            margin-top: -2.2em;
+          }
+
+          @media only screen and (max-device-width: 330px) {
+            max-height: 130px;
+            height: auto;
+            margin-top: -1.25em;
+          }
+        }
+      }
+    }
+
+    .search-header {
+      @include breakpoint($small) {
+        font-size: 14px !important;
+        left: -1.25em;
+        right: -1.25em;
+      }
+
+      @media only screen and (max-device-width: 420px) {
+        font-size: 23px !important;
+      }
+
+      @media only screen and (max-device-width: 330px) {
+        font-size: 28px !important;
+      }
+    }
+
+    .search-form {
+      @include breakpoint($small) {
+        font-size: 14px !important;
+        left: -2.25em;
+        right: -2.25em;
+      }
+
+      @media only screen and (max-device-width: 420px) {
+        font-size: 22px !important;
+        left: -1.45em;
+        right: -1.45em;
+      }
+
+      @media only screen and (max-device-width: 330px) {
+        font-size: 26px !important;
+        left: -1.15em;
+        right: -1.15em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+
+      &__item {
+        font-size: 14px !important;
+      }
+
+      &__input {
+        @include breakpoint($small) {
+          @include em('padding', 0 20px);
+
+          height: 2.6em;
+          font-size: 1.1em;
+        }
+
+        @media only screen and (max-device-width: 420px) {
+          @include em('height', 42px);
+          @include em('font-size', 24px);
+          @include em('padding', 0 20px);
+        }
+
+        @media only screen and (max-device-width: 330px) {
+          height: 2.8em;
+          padding: 0 1.2em;
+          border-width: 0.06em;
+        }
+      }
+    }
+
+    #block-freerange-main-menu-menu {
+      @media only screen and (max-device-width: 420px) {
+        font-size: 23px !important;
+      }
+
+      @media only screen and (max-device-width: 330px) {
+        font-size: 26px !important;
+      }
+    }
+  }
+}

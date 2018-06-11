@@ -1,0 +1,88 @@
+// WFM Sign-In Form
+//
+// Markup: wfm-form-signin.twig
+//
+// Style guide: components.wfm-form.wfm-form-signin
+
+.wfm-user-register,
+.wfm-user-signin {
+  .region-header {
+    margin-bottom: 0;
+  }
+
+  .mq-main {
+    @include rem('padding-top', 40px);
+    @include rem('padding-bottom', 80px);
+
+    box-sizing: border-box;
+
+    @include breakpoint($small) {
+      @include rem('padding-top', 20px);
+      @include rem('padding-bottom', 20px);
+    }
+  }
+
+  .block-page-title-block {
+    h1 {
+      @extend %clearfix;
+
+      @include rem('margin', 0 0 45px);
+      @include rem('font-size', 50px);
+
+      display: block;
+      line-height: 1.2;
+      padding: 0;
+      color: $default;
+      font-family: $cooper-bt;
+      font-weight: 500;
+      text-transform: capitalize;
+      text-align: center;
+
+      @include breakpoint($small) {
+        @include rem('margin-bottom', 35px);
+        @include rem('font-size', 44px);
+      }
+    }
+  }
+
+  .signin__container--title {
+    display: none;
+  }
+}
+
+.wfm-user-register {
+  .block-page-title-block h1 {
+    @include rem('margin-bottom', 20px);
+  }
+
+  .signinup-container {
+    &__text {
+      @include rem('font-size', 18px);
+    }
+
+    &__social {
+      @include rem('margin-top', 35px);
+    }
+  }
+
+  .wfm-form__item-password {
+    @include rem('margin-bottom', 35px);
+  }
+}
+
+.signin-form {
+  &__input[type="submit"] {
+    margin: 0 auto;
+  }
+
+  &__item-forgot-password {
+    text-align: left;
+
+    &-link {
+      @include rem('margin-top', 15px);
+
+      margin-bottom: 0;
+    }
+  }
+}
+

@@ -1,0 +1,22 @@
+// SVG Sizing  - SVG sprite sizing examples
+//
+// Simple tabs styling.
+//
+// Markup: svg-sizing.twig
+//
+// Style guide: components.svg-sizing
+
+svg.svg-example-small {
+  @include rem('width', 100px);
+  @include rem('height', 100px);
+}
+
+svg.svg-example-medium {
+  @include rem('width', 200px);
+  @include rem('height', 200px);
+}
+
+svg.svg-example-large {
+  @include rem('width', 300px);
+  @include rem('height', 300px);
+}

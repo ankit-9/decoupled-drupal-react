@@ -1,0 +1,63 @@
+// WFM Coupons - Introductions Snippets.
+//
+// Markup: coupons-introductions-snippets.twig
+//
+// Style guide: components.coupons.coupons-introductions-snippets
+
+.coupons-int {
+  background: $wf-coupons-green-bg;
+
+  &__top {
+    @include rem('font-size', 24px);
+    @include rem('padding', 5px 30px);
+
+    font-family: $avenier-next;
+    font-weight: 600;
+    background: url(../compressed-images/coup-int-texture.png) top center;
+    display: flex;
+    align-items: center;
+    color: $white;
+  }
+
+  &__count {
+    @include rem('font-size', 24px);
+    @include rem('margin-right', 10px);
+    @include rem('width', 40px);
+    @include rem('height', 40px);
+
+    font-family: $cooper-bt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $wf-coupons-green-dot;
+    color: $white;
+    border-radius: 100%;
+    box-sizing: border-box;
+
+    @include breakpoint($small) {
+      @include rem('width', 60px);
+    }
+  }
+
+  &__bottom {
+    @include rem('font-size', 18px);
+    @include rem('padding', 10px 20px);
+
+    font-family: $avenier-next;
+    background: $wf-coupons-green-bg url(../compressed-images/coup-int-texture.png) top center;
+    color: $white;
+    line-height: 1.4;
+    text-align: center;
+
+    strong {
+      font-weight: 600;
+    }
+
+    .link {
+      color: $white;
+      font-weight: 500;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

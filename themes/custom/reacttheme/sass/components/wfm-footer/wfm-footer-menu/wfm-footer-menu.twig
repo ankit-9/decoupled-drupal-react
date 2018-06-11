@@ -1,0 +1,204 @@
+{#
+footerMenu is available in this twig file from wfm-footer.twig
+
+Raw Structure -- from - wfm-footer.twig:2
+
+
+  "footerMenu" : [
+    { "title": "Shopping-1",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online",
+          "externalLinks" : "yes"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online"
+        },
+        {
+          "url": "/signin",
+          "text": "Sign in / Register",
+          "externalLinks" : "yes"
+        }
+      ]
+    },
+    { "title": "Shopping-2",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online"
+        },
+        {
+          "url": "/signin",
+          "text": "Sign in / Register",
+          "id": "capture_signin_link"
+        }
+      ]
+    },
+    { "title": "Shopping-3",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/signin",
+          "text": "Sign in / Register",
+          "id": "capture_signin_link"
+        }
+      ]
+    },
+    { "title": "Shopping-4",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale"
+        },
+        {
+          "url": "/signin",
+          "text": "Sign in / Register",
+          "id": "capture_signin_link"
+        }
+      ]
+    },
+    { "title": "Shopping-5",
+      "menulinks" : [
+        {
+          "text": "Getting Started",
+          "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started",
+          "externalLinks" : "yes"
+        },
+        {
+          "url": "/stores/list",
+          "text": "Find a store",
+          "externalLinks" : "yes"
+        },
+        {
+          "url": "/sales-flyer",
+          "text": "On Sale",
+          "externalLinks" : "yes"
+        },
+        {
+          "url": "/online-ordering",
+          "text": "Shop Online",
+          "externalLinks" : "yes"
+        }
+      ]
+    }
+  ],
+ #}
+
+<div class="footer__block">
+  <div class="footer__block--menu menu clearfix">
+    {# Iterating all footer Menu Links #}
+    {% for key,menu in footerMenu %}
+      {# Creating a new div for first and third element #}
+      {% if key == 0 or key == 2 %}
+        <div class="footer__left-column hidden-xs">
+      {% endif %}
+      <div class="clearfix">
+        <h3 class="footer__block-title menu-title"> {{ menu.title }}</h3>
+        <div class="footer__block-navbar menu-navbar" aria-label=" {{ menu.title }}">
+          <h4 class="hidden">{{ menu.title }}</h4>
+          <ul class="footer__block-nav menu-nav">
+            {% for menuLink in menu.menulinks %}
+              <li class="footer__block-nav-item menu-nav-item">
+                <a class="footer__block-nav-link menu-nav-link {{ (menuLink.externalLinks) ? 'ext' : '' }}" href="{{ menuLink.url }}">{{ menuLink.text }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% if key == 1 %}
+        {# Closing the due div for second iteration #}
+        </div> <!-- close footer__container__left-column-->
+      {% endif %}
+    {% endfor %}
+        </div> <!-- close last footer__container__left-column-->
+
+    {# Separate HTML for mobile design #}
+    <div class="footer__block--menu-mobile visible-xs clearfix">
+      {% for key,menu in footerMenu %}
+        {# Iterating all footer Menu Links #}
+        <div data-action="aria-toggle" class="mobile-nav-wrapper">
+          <h4 class="footer__block-title mobile-nav-title">
+            <a href="javascript:void(0)" class="footer__block-title-link trigger" aria-expanded="false" aria-controls="footerMenu">
+              <svg class="svg-expand-dims icon icon-expand">
+                <use xlink:href="#expand"></use>
+              </svg>
+              <svg class="svg-collapse-dims icon icon-collapse">
+                <use xlink:href="#collapse"></use>
+              </svg>
+              {{ menu.title }}
+            </a>
+          </h4>
+          <div class="mobile-nav slideup">
+            <div class="footer__block-navbar menu-navbar" aria-label="{{ menu.title }}">
+              <h5 class="hidden">{{ menu.title }}</h5>
+              <ul class="footer__block-nav menu-nav">
+                {% for menuLink in menu.menulinks %}
+                  <li class="footer__block-nav-item menu-nav-item">
+                    <a class="footer__block-nav-link menu-nav-link {{ (menuLink.externalLinks) ? 'ext' : '' }}" href="{{ menuLink.url }}">{{ menuLink.text }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

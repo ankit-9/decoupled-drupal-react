@@ -1,0 +1,190 @@
+/* ****************** Font Family ****************** */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700|Oswald:300,400);
+
+/* ****************************** Colors Schema ****************************** */
+
+/* ********* Palletes Definitions ********* */
+$colorCodes: define-default-color-scheme('Default Color Schemes', 'Generic Color Palletes used site wide.');
+// $colorCodes: define-color-scheme('pallete', "Generic Color Palletes used site wide.");
+
+/* ********* Palletes Assignments ********* */
+
+$colorCodes: add-colors(
+  'Default Color Schemes',
+  (
+    'fb': #3b5998,
+    'light-blue': #b2e8de,
+    'pintrest': #c92228,
+    'dark-red': #d63900,
+    'components-submit': 'dark-red',
+    'components-input-err': #de1e35,
+    'red': #ee696c,
+    'components-input-bg': #f7ded5,
+    'orange': #eba621,
+    'yellow': #e8ed57,
+    'dr-blue': #232e37,
+    'footer-link-hover': #003021,
+    'dark-green': #404f4a, // Sets this color to the same value as the "link" color.
+    'header-green': #004e36,
+    'header-dark-green': #00643f,
+    'components-link': #006f46,
+    'green': #319f52,
+    'coupons-green-dot': #84c22d,
+    'taupe': #c4c2b2,
+    'light-taupe': #f8f6ea,
+    'light-taupe-soft': #f8f6e9,
+    'light-green': ('green' lighten 70%),
+    'white': #fff,
+    'off-white': ('white' darken 3%),
+    'disabled-bg': #f5f5f5,
+    'coupons-grey-bg': #ebe9e8,
+    'lighter-gray': ('white' darken 10%),
+    'lighter-gray-soft': #e4e4e4,
+    'light-gray': ('white' darken 30%),
+    'store-item-border': #aaa,
+    'components-search-border': #9f9f9f,
+    'med-gray': ('white' darken 60%),
+    'gray': #565553,
+    'components-newsletter': #454545,
+    'dark-gray': ('white' darken 80%),
+    'strong-gray': #2e2e2b,
+    'light-black': #0c0c0c,
+    'black': #000,
+    'default': #2e2d2b,
+    'border-gray' : #bebebe
+  )
+);
+
+/* ********** Palletes Application ********** */
+
+// Grey scale colors in order
+
+$border-gray: color('Default Color Schemes', 'border-gray');
+$default: color('Default Color Schemes', 'default');
+$blk: color('Default Color Schemes', 'black');
+$light-black: color('Default Color Schemes', 'light-black');
+$dark-gray: color('Default Color Schemes', 'dark-gray');
+$med-gray: color('Default Color Schemes', 'med-gray');
+$wf-gray: color('Default Color Schemes', 'gray');
+$wf-bg-gray: color('Default Color Schemes', 'lighter-gray-soft');
+$light-gray: color('Default Color Schemes', 'light-gray');
+$lighter-gray: color('Default Color Schemes', 'lighter-gray');
+$off-white: color('Default Color Schemes', 'off-white');
+$white: color('Default Color Schemes', 'white');
+
+// RGB colors in the order
+
+$red: color('Default Color Schemes', 'red');
+$dark-red: color('Default Color Schemes', 'dark-red');
+$yellow: color('Default Color Schemes', 'yellow');
+$wf-taupe: color('Default Color Schemes', 'taupe');
+$wf-orange: color('Default Color Schemes', 'orange');
+$wf-green: color('Default Color Schemes', 'green');
+$wf-light-green: color('Default Color Schemes', 'light-green');
+$wf-dark-green: color('Default Color Schemes', 'dark-green');
+$light-blue: color('Default Color Schemes', 'light-blue');
+$wf-dr-blue: color('Default Color Schemes', 'dr-blue');
+$strong-gray: color('Default Color Schemes', 'strong-gray');
+
+// Component Used site wide
+
+$wf-link-green: color('Default Color Schemes', 'components-link');
+$wf-newsletter-text: color('Default Color Schemes', 'components-newsletter');
+$wf-input: color('Default Color Schemes', 'strong-gray');
+$wf-input-bg: color('Default Color Schemes', 'components-input-bg');
+$wf-input-er: color('Default Color Schemes', 'components-input-err');
+$wf-submit: color('Default Color Schemes', 'components-submit');
+$search-border : color('Default Color Schemes', 'components-search-border');
+
+// States of different components
+
+$disabled-bg: color('Default Color Schemes', 'disabled-bg');
+$disabled-border: color('Default Color Schemes', 'lighter-gray-soft');
+
+// Header Color codes
+
+$wf--header-green: color('Default Color Schemes', 'header-green');
+$wf-dark-header-green: color('Default Color Schemes', 'header-dark-green');
+$menu_bg: color('Default Color Schemes', 'light-taupe-soft');
+
+// Footer Color codes
+
+$wf-ft-text: color('Default Color Schemes', 'strong-gray');
+$wf-ft-lnkHover: color('Default Color Schemes', 'footer-link-hover');
+$wf-ft-title: color('Default Color Schemes', 'strong-gray');
+
+$wf-coupons-grey-bg: color('Default Color Schemes', 'coupons-grey-bg');
+$wf-coupons-green-bg: color('Default Color Schemes', 'light-taupe');
+$wf-coupons-green-dot: color('Default Color Schemes', 'coupons-green-dot');
+
+$facebook-blue: color('Default Color Schemes', 'fb');
+$pinterest-red: color('Default Color Schemes', 'pintrest');
+$store-item-border: color('Default Color Schemes', 'store-item-border');
+
+// Utility Color variables
+
+$heading: $dark-gray;
+$link: $med-gray;
+
+/* **************************** Fonts Decleration **************************** */
+
+$avenier-next: "Avenir Next","Helvetica Neue", Helvetica, Arial, sans-serif;
+$cooper-bt: "Cooper BT", "Palatino", sans-serif;
+$rescue: "Rescue","Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$heading_font: $avenier-next;
+$body_font: $avenier-next;
+
+/* ******************************* Susy Config ******************************* */
+
+$susy: (
+  columns: 12, // The number of columns in your grid
+  gutters: 1/4, // The size of a gutter in relation to a single column
+);
+
+/* *************************** Breakpoints & MQ's  *************************** */
+
+$screen: "only screen" !default;
+$very-small-max: 380px !default;
+$small-max: 767px !default;
+$medium-max: 1023px !default;
+$very-small: $screen max-width $very-small-max;
+$small: $screen max-width $small-max;
+$up-sm: $screen $small-max + 1;
+$medium: $screen $small-max + 1 $medium-max;
+$large: $screen $medium-max + 1;
+
+/* ******************** Base size to convert Px to em unit ******************* */
+
+$base-font-size-ems: 14px;
+
+/* *************************** Example Placeholders ************************** */
+
+.no-ul-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  > li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 2px;
+  }
+}
+
+.tmp-shadow {
+  box-shadow: 0 0 2px 0 $red;
+}
+
+.tmp-shadow-none {
+  box-shadow: none;
+}
+
+.blocked-style {
+  border: 1px solid $white;
+  padding: 12px;
+  border-radius: 5px;
+  background: $off-white;
+
+  @extend .tmp-shadow;
+}

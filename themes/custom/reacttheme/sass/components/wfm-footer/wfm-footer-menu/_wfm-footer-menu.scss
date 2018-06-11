@@ -1,0 +1,97 @@
+// WFM Footer Menu
+//
+// Markup: wfm-footer-menu.twig
+//
+// Style guide: components.wfm-footer.wfm-footer-menu
+.footer {
+  &__block {
+    &--menu {
+      .menu-nav-link {
+        &.ext {
+          &::after {
+            @include em( 'width', 10px );
+            @include em( 'height', 10px );
+            @include em( 'margin-left', 5px );
+
+            content: " - External Link";
+            text-indent: -99999px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('../compressed-images/external-link.png');
+            background-repeat: no-repeat;
+          }
+
+          .ext {
+            display: none;
+          }
+        }
+      }
+
+      &-mobile {
+        .block-nav {
+          @include em( 'padding-left', 52px );
+        }
+
+        .mobile-nav-title {
+          margin: 0;
+          padding: 0;
+        }
+
+        .menu-nav {
+          @include em( 'padding-bottom', 13px);
+
+          margin: 0.6em 0 0;
+          border-bottom: 0.07692em solid $light-gray;
+        }
+
+        .icon {
+          @include em( 'margin-right', 10px );
+          @include em( 'width', 20px );
+          @include em( 'height', 20px );
+
+          display: inline-block;
+          vertical-align: middle;
+          fill: $wf-ft-title;
+
+          &.icon-collapse {
+            display: none;
+          }
+        }
+
+        .footer__block-title-link.trigger {
+          @include em( 'padding', 13px 0 13px 13px);
+
+          display: block;
+          margin: 0;
+          border-bottom: 0.071428em solid $light-gray;
+          cursor: pointer;
+
+          &[aria-expanded='true'] {
+            border-bottom: 0;
+            padding-bottom: 0;
+          }
+
+          &:hover,
+          &:active,
+          &:visited {
+            text-decoration: none;
+
+            @include breakpoint($up-sm) {
+              color: $wf-ft-lnkHover;
+            }
+          }
+        }
+
+        .mobile-nav {
+          &.collapse {
+            display: block;
+          }
+
+          &.expand {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

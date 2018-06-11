@@ -1,0 +1,68 @@
+
+	<!--
+
+    Sprite shape dimensions
+    ====================================================================================================
+    You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+    they would become a huge 100% in size. You may use the following dimension classes for doing so.
+    They might well be outsourced to an external stylesheet of course.
+
+    -->
+
+	<style type="text/css">
+		{{#shapes}}	{{#selector.dimensions}}{{expression}}{{^last}}, {{/last}}{{/selector.dimensions}} { width: {{width.outer}}px; height: {{height.outer}}px; }
+		{{/shapes}}</style>
+	<!--
+    ====================================================================================================
+    -->
+
+
+
+<!--
+
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+	https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+
+-->
+
+<svg width="0" height="0" style="position:absolute">
+	{{#shapes}}		{{{svg}}}
+	{{/shapes}}
+</svg>
+
+<!--
+====================================================================================================
+-->
+
+<div class="svg-sprite-example">
+	<!--
+
+    Inline SVG with embedded sprite
+    ====================================================================================================
+    These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+    embedded above. They may be styled via CSS.
+
+    -->
+
+	<h3>A) Inline SVG with embedded sprite</h3>
+	<ul class="svg-sprite-example__listings">
+		{{#shapes}}
+		<li class="svg-sprite-example__listing" title="{{name}}">
+			<div class="svg-sprite-example__icon-box">
+				<!-- {{name}} -->
+				<svg class="{{#selector.dimensions}}{{#last}}{{#classname}}{{raw}}{{/classname}}{{/last}}{{/selector.dimensions}}">
+					<use xlink:href="#{{name}}"></use>
+				</svg>
+			</div>
+			<h2  class="svg-sprite-example__description">{{name}}</h2>
+		</li>
+		{{/shapes}}
+	</ul>
+	<p>Generated at {{date}} by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+</div>

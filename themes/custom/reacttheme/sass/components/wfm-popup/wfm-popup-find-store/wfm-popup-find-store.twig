@@ -1,0 +1,82 @@
+{# Use modal html for creating a modal #}
+{##
+
+<div class="modal__mask">
+  <div class="modal__tint" ></div>
+  <div class="modal__container">
+  </div>
+</div>
+
+#}
+
+<div class="find-store">
+  <div class="find-store__header">
+    <button class="find-store__close" title="Close the popup">
+      <span class="hidden"> Close </span>
+      <svg class="svg-hamburger-x-dims">
+        <use xlink:href="#close-white"></use>
+      </svg>
+    </button>
+    <h2 class="find-store__title">
+      {{ findStore.title }}
+    </h2>
+    <div class="find-store__sub-title">
+      {{ findStore.subTitle }}
+    </div>
+    <div class="find-store__search">
+      <label class="hidden" for="find-store__search-box" > Search Form </label>
+      <input class="find-store__search-box" type="text" id="find-store__search-box" title="Search by {{ findStore.searchPlaceholder }}" placeholder="{{ findStore.searchPlaceholder }}" />
+      <button class="find-store__search-icon" title="Search Now">
+        <span class="hidden"> Search button </span>
+        <svg class="svg-search-icon-dims">
+          <use xlink:href="#store-search-icon"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="find-store__content">
+    {% if findStore.isError %}
+    <div class="find-store__error"> Error! </div>
+    {% endif %}
+    <fieldset class="find-store__items no-styling">
+      <legend class="visually-hidden"> All Stores </legend>
+      {% for item in findStore.items %}
+        <div class="find-store__item">
+          <label class="hidden" for="store__{{ item.value }}"> {{ item.title }} </label>
+          <input class="find-store__item-input" id="store__{{ item.value }}" type="radio" title="Store {{ item.title }}, Address {{ item.address }}, Distance {{ item.distance }} miles" name="selected_store" value="{{ item.value }}" />
+          <div class="find-store__item-content">
+            <div class="find-store__item-l1"><span class="find-store__item-title">{{ item.title }}</span> <span class="find-store__item-distance"> {{ item.distance }} miles </span></div>
+            <div class="find-store__item-l2">{{ item.address }}</div>
+            <div class="find-store__item-l3">{{ item.city }}, {{item.pin}}</div>
+          </div>
+        </div>
+      {% endfor %}
+        <div v-if="store_modal_data.canLoadMore" @click="loadMoreStores()" @keyup="fireLoadMoreStores()" class="find-store__loadmore find-store__item">
+          <div class="find-store__loadmore-inner find-store__item-content" tabindex="0">
+            Load more stores
+          </div>
+        </div>
+    </fieldset>
+    {% if findStore.isLoading %}
+      <div class="find-store__loading">
+        <div class="lds-spinner" style="width:100%;height:100%;" >
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <div class="find-store__footer">
+    <button class="find-store__button find-store__button--disabled" title="Save the store" >{{ findStore.button.select }}</button>
+  </div>
+</div>

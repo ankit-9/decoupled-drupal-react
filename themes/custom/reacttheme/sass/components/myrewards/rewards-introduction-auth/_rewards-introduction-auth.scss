@@ -1,0 +1,59 @@
+// WFM Rewards - Rewards Landing page Introduction block Authenticated
+//
+// Markup: rewards-introduction-auth.twig
+//
+// Style guide: components.rewards-introduction-auth
+
+.rewards-int-block {
+  &__welcome-heading {
+    @include rem('font-size', 28px);
+
+    font-family: $cooper-bt;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 38px);
+
+      max-width: 600px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      height: 10px;
+      width: 100%;
+      background: url(../compressed-images/homepage-block-border.png) center center repeat-x;
+
+      @include breakpoint($up-sm) {
+        top: 20px;
+      }
+    }
+
+    span {
+      display: inline-block;
+      background-color: $white;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__welcome-text {
+    @include rem('font-size', 16px);
+
+    max-width: 300px;
+    line-height: 1.4;
+    margin: 20px auto;
+    font-family: $avenier-next;
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 18px);
+
+      max-width: 400px;
+    }
+  }
+}

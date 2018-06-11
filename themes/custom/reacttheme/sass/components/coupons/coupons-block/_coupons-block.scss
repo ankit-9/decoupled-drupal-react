@@ -1,0 +1,147 @@
+// WFM Coupons - Coupons Block.
+//
+// Markup: coupons-block.twig
+//
+// Style guide: components.coupons.coupons-block
+
+.coupons-card {
+  @include rem('padding', 15px 10px);
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include breakpoint ($up-sm) {
+    @include rem('padding', 20px 10px 30px 10px);
+
+    flex-direction: row;
+  }
+
+  @include breakpoint ($medium) {
+    @include rem('padding', 40px);
+
+    flex-direction: column;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &__left {
+    @include rem('padding', 0);
+
+    @include breakpoint($up-sm) {
+      @include rem('padding', 15px);
+    }
+
+    img {
+      @include rem('width', 96px);
+
+      height: auto;
+
+      @include breakpoint($up-sm) {
+        @include rem('width', 160px);
+      }
+    }
+  }
+
+  &__right {
+    @include rem('padding', 10px);
+
+    text-align: left;
+
+    @include breakpoint($up-sm) {
+      @include rem('padding', 15px);
+
+      text-align: left;
+    }
+
+    @include breakpoint ($medium) {
+      text-align: center;
+    }
+
+    position: static;
+    flex: 1;
+    font-family: $avenier-next;
+  }
+
+  &__title {
+    @include rem('font-size', 18px);
+    @include rem('margin-bottom', 5px);
+
+    font-weight: 600;
+  }
+
+  &__boldtitle {
+    @include rem('font-size', 14px);
+    @include rem('margin-bottom', 5px);
+
+    font-weight: 600;
+  }
+
+  &__description {
+    @include rem('font-size', 13px);
+    @include rem('margin-bottom', 10px);
+
+    line-height: 1.4;
+  }
+
+  &__validity {
+    @include rem('font-size', 13px);
+    @include rem('margin-bottom', 10px);
+
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  &__subtitle {
+    @include rem('margin', 10px 0);
+
+    font-family: $rescue;
+    color: $wf-green;
+
+    &-text {
+      @include rem('font-size', 28px);
+
+      text-transform: uppercase;
+
+      @include breakpoint($up-sm) {
+        @include rem('font-size', 48px);
+      }
+    }
+  }
+
+  &__info {
+    @include rem('width', 28px);
+    @include rem('height', 28px);
+    @include rem('bottom', 10px);
+    @include rem('left', 10px);
+
+    position: absolute;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    line-height: 1.2;
+    border-radius: 100%;
+    border-color: transparent;
+
+    svg {
+      @include rem('width', 28px);
+      @include rem('height', 28px);
+
+      fill: $dark-red;
+    }
+
+    &:hover {
+      svg {
+        fill: $wf-green;
+      }
+    }
+  }
+}

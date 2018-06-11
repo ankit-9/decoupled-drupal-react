@@ -1,0 +1,109 @@
+// WFM Coupons - Coupons FAQ page.
+//
+// Markup: coupons-faq.twig
+//
+// Style guide: components.coupons.coupons-faq
+
+.faq-page {
+  @include em('padding', 20px 0);
+
+  @include breakpoint($up-sm) {
+    @include em('padding', 40px 0);
+  }
+
+  color: $default;
+
+  &__title {
+    @include em('font-size', 24px);
+
+    @include breakpoint($up-sm) {
+      @include em('font-size', 36px);
+    }
+
+    line-height: 1.33333333em; /* 32/24  & 48/36 */
+    margin-bottom: 0.83333333em; /* 30/36 & 20/24 */
+    font-family: $cooper-bt;
+    text-align: center;
+  }
+
+  &__section {
+    @include em('padding' , 5px 0);
+
+    &-item {
+      display: inline-block;
+      width: 100%;
+    }
+
+    &-title {
+      @include em('font-size', 18px);
+
+      line-height: 1.33333333em;  /* 24/18  & 32/2 */
+      margin-bottom: 0.83333333em;  /* 15/18 & 20/24 */
+      padding: 0;
+      color: $default;
+      font-family: $cooper-bt;
+
+      @include breakpoint($up-sm) {
+        @include em('font-size', 24px);
+      }
+
+      &.no-b-margin {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &-ques {
+      @include em('font-size', 16px);
+
+      line-height: 1.25em; /* 20/16 */
+      font-family: $avenier-next;
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
+
+      @include breakpoint($up-sm) {
+        @include em('font-size', 18px);
+
+        line-height: 1.33333333em; /* 24/18 */
+      }
+    }
+
+    &-ans {
+      &.top-spaced {
+        @include em('font-size', 13px);
+
+        margin-top: 1.15384615em; /* 15/13 */
+
+        @include breakpoint($up-sm) {
+          @include em('font-size', 14px);
+          @include em('margin-top' , 20px);
+        }
+      }
+
+      p {
+        @include em('font-size', 13px);
+
+        margin-bottom: 1.15384615em; /* 15/13 */
+        line-height: 1.5em; /* 21/14 & 21/13 */
+        font-family: $avenier-next;
+
+        @include breakpoint($up-sm) {
+          @include em('font-size', 14px);
+          @include em('margin-bottom' , 20px);
+        }
+
+        a {
+          text-decoration: underline;
+          color: $wf-link-green;
+        }
+      }
+    }
+  }
+}
+
+.alias--rewards-faq,
+.alias--coupons-faq {
+  .block-page-title-block {
+    display: none;
+  }
+}

@@ -1,0 +1,26 @@
+<div class="header__block">
+  <div class="header__block--search">
+    <div class="search-header">
+      <a href="javascript:void(0)" aria-label="Search Button" role="button" class="search-header__link">
+        <svg class="svg-search-icon-dims" alt="search button">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-icon"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="search-form">
+      <div class="search-form__item" role="search-form">
+        <input type="text" name="xys-search" id="storeSearch" class="search-form__input" placeholder="search wholefoodsmarket.com" aria-describedby="initInstr" aria-label="Search Form" aria-activedescendant="selected__option" aria-autocomplete="both" aria-owns="results" aria-expanded="true">
+        <div class="autocomplete-list">
+          <ul id="results" class="autocomplete-list__items" role="listbox" tabindex="0">
+            {% for value in autocompleteoptions %}
+              <li class="autocomplete-list__item" role="option" aria-selected="false">{{ value.text }}</li>
+            {% endfor %}
+          </ul>
+          <span id="initInstr" class="visually-hidden">When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.</span>
+          <div aria-live="assertive" class="visually-hidden"></div>
+        </div>
+      </div>
+      <div class="search-form__enter-text" aria-label="Hit enter to search">Hit enter to search</div>
+    </div>
+  </div>
+</div>

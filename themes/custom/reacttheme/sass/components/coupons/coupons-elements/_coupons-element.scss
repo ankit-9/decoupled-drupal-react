@@ -1,0 +1,51 @@
+// WFM Coupons - Coupons Elements.
+//
+// Markup: coupons-elements.twig
+//
+// Style guide: components.coupons.coupons-elements
+
+.coupons {
+  &-off-text {
+    text-decoration: underline;
+  }
+
+  &-off-text,
+  &-dollar-sign {
+    @include rem('font-size', 24px);
+    @include rem('top', -20px);
+
+    position: relative;
+    font-family: $rescue;
+    color: $wf-green;
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 36px);
+      @include rem('top', -28px);
+    }
+  }
+
+  &-amount {
+    @include rem('font-size', 58px);
+    @include rem('margin', 10px 0);
+
+    font-family: $rescue;
+    color: $wf-green;
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 78px);
+    }
+
+    &.text-only {
+      @include rem('font-size', 44px);
+
+      @include breakpoint($up-sm) {
+        @include rem('font-size', 54px);
+      }
+
+      @include breakpoint($large) {
+        @include rem('font-size', 74px);
+      }
+    }
+  }
+}
+

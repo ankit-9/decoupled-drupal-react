@@ -1,0 +1,88 @@
+// WFM Rewards - Savings, Fresh Deals, and Surprises Block.
+//
+// Markup: rewards-saving-fresh-deals-surprises.twig
+//
+// Style guide: components.saving-fresh-deals-surprises
+
+.rewards-sfdf-block {
+  @include rem('padding-bottom', 20px);
+
+  display: block;
+  position: relative;
+  text-align: center;
+
+  @include breakpoint($up-sm) {
+    text-align: left;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    background: url(../compressed-images/homepage-block-border.png) center center repeat-x;
+  }
+
+  &__container {
+    @include rem('padding-bottom', 20px);
+
+    display: inline-block;
+
+    @include breakpoint($up-sm) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    @include rem('padding', 20px);
+
+    text-align: center;
+    max-width: 270px;
+
+    &.savings {
+      .rewards-sfdf-block__image {
+        background-position: top center;
+      }
+    }
+
+    &.fresh-deals {
+      .rewards-sfdf-block__image {
+        background-position: top left;
+      }
+    }
+
+    &.surprises {
+      .rewards-sfdf-block__image {
+        background-position: top right;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 10px;
+    width: 124px;
+    height: 124px;
+    background: url(../compressed-images/homepage-sfds-spr.png) left top no-repeat;
+    transition: transform 0.2s cubic-bezier(0, 0, 0, 0.4);
+    transform: scale(1);
+  }
+
+  &__title {
+    @include rem('font-size', 24px);
+    @include rem('margin', 20px 0 5px 0);
+
+    font-family: $cooper-bt;
+    font-weight: bold;
+  }
+
+  &__description {
+    @include rem('font-size', 14px);
+
+    line-height: 1.7;
+  }
+}

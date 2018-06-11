@@ -1,0 +1,43 @@
+.wfm-core-coupons-landing {
+  .rewards-download-app-block {
+    float: left;
+    width: 100%;
+
+    @include breakpoint($large) {
+      width: 42%;
+    }
+  }
+
+  #content-area {
+    @include breakpoint($up-sm) {
+      padding-bottom: 40px;
+    }
+  }
+
+  .block-registration-login {
+    position: relative;
+    float: left;
+    width: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 10px;
+      width: 100%;
+      background: url('../compressed-images/homepage-block-border.png') center center repeat-x;
+
+      @include breakpoint($large) {
+        width: 10px;
+        height: 100%;
+        background: url('../compressed-images/homepage-block-border-v.png') center center repeat-y;
+      }
+    }
+
+    @include breakpoint($large) {
+      width: 58%;
+      margin-bottom: 0;
+    }
+  }
+}

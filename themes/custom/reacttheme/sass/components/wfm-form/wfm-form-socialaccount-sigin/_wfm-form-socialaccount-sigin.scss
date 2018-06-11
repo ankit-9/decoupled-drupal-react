@@ -1,0 +1,124 @@
+// WFM social account signin form
+//
+// Markup: wfm-form-socialaccount-sigin.twig
+//
+// Style guide: components.wfm-form.wfm-form-socialaccount-sigin
+
+.socialaccount-signin {
+  &__text {
+    @include rem('width', 345px);
+    @include rem('margin', 0 auto 60px auto);
+
+    line-height: 1.4;
+
+    @include breakpoint($small) {
+      width: 100%;
+    }
+  }
+
+  .socialaccount-form {
+    @include rem('width', 345px);
+
+    &__item {
+      @include rem('margin-bottom', 5px);
+    }
+
+    &__link {
+      @include btn-red;
+      @include red-border-btn;
+      @include rem('width', 345px);
+
+      margin: 0 auto;
+
+      @include breakpoint($small) {
+        width: 100%;
+      }
+    }
+
+    &__social-link {
+      @include rem('margin-bottom', 20px);
+
+      width: 100%;
+
+      &__input[type="submit"] {
+        width: 100%;
+        text-transform: inherit;
+      }
+    }
+
+    @include breakpoint($small) {
+      width: 100%;
+    }
+  }
+
+  .signinup__below {
+    @include rem('margin-top', 10px);
+  }
+}
+
+.social {
+  &__forgotpassword-link {
+    @include rem('margin-top', 20px);
+  }
+}
+
+.connectsocialaccount-container {
+  &__detail {
+    @include rem('max-width', 240px);
+
+    text-align: center;
+
+    &--logo {
+      @include rem('height', 50px);
+      @include rem('width', 50px);
+      @include rem('margin', 20px auto);
+
+      display: block;
+
+      .icon {
+        height: inherit;
+        width: inherit;
+      }
+    }
+
+    p {
+      line-height: 1.4;
+    }
+
+    &--status {
+      @include rem('font-size', 50px);
+
+      padding: 0;
+    }
+  }
+
+  .modal__container {
+    height: auto;
+  }
+
+  .coupons-detail {
+    border-bottom: none;
+
+    &__header {
+      @include rem('padding', 40px 80px);
+
+      display: block;
+
+      @include breakpoint($small) {
+        @include rem('padding', 20px 60px);
+      }
+
+      @include breakpoint($very-small) {
+        @include rem('padding', 20px);
+      }
+
+      &__close {
+        @include rem('margin-top', 5px);
+
+        @include breakpoint($small) {
+          outline: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+// WFM Header Menu
+//
+// Markup: wfm-header-menu.twig
+//
+// Style guide: components.wfm-header.wfm-header-menu
+
+.header__block--menu {
+  float: right;
+  clear: right;
+
+  @include breakpoint($up-sm) {
+    float: left;
+  }
+
+  .menu--main {
+    &__nav {
+      @include breakpoint($up-sm) {
+        @include em("margin-top", 45px);
+      }
+    }
+
+    &__item {
+      @include breakpoint($small) {
+        @include rem('padding', 5px 0);
+
+        float: right;
+        clear: both;
+      }
+
+      &.active {
+        @include rem('padding-bottom', 4px);
+
+        border-bottom: 2px solid $blk;
+
+        .menu__link {
+          color: $default;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__link {
+      @include em('font-size', 18px);
+
+      // line-height: (60/25) * 1em;
+      padding: 0 0.44em;
+      display: block;
+      color: $wf-link-green;
+      font-family: $avenier-next;
+      font-weight: 500;
+      box-sizing: border-box;
+      text-decoration: none;
+
+      // @include breakpoint($up-sm) {
+      //   @include em('font-size', 18px);
+
+      //   line-height: (22/18) * 1em;
+      // }
+
+      &:hover {
+        color: $wf-ft-lnkHover;
+        text-decoration: none;
+      }
+
+      @include breakpoint($medium) {
+        @include em('padding', 0 3px);
+      }
+    }
+  }
+
+  .menu--main__collapse {
+    @include breakpoint($small) {
+      @include em("left", -20px);
+      @include em("right", -20px);
+      @include em("padding", 10px);
+      @include em("margin-top", 10px);
+
+      position: absolute;
+      display: none;
+      background-color: $menu_bg;
+      z-index: 97;
+    }
+  }
+
+  .menu--main__header {
+    @extend %clearfix;
+
+    @include em("margin-top", 20px);
+
+    @include breakpoint($small) {
+      @include em("margin-top", 12px);
+      @include em("width", 35px);
+      @include em("height", 35px);
+    }
+
+    display: block;
+
+    .svg-hamburger-dims,
+    .svg-hamburger-x-dims {
+      @include em("width", 35px);
+      @include em("height", 35px);
+    }
+
+    .svg-hamburger-x-dims {
+      display: none;
+      fill: $wf-link-green;
+    }
+
+    .icon-bar {
+      @extend %clearfix;
+
+      @include em("width", 20px);
+      @include em("margin-bottom", 4px);
+      @include em("border-width", 2px);
+
+      display: block;
+      border-color: $wf-link-green;
+    }
+  }
+
+  .fa-bars {
+    @include em("font-size", 25px);
+
+    color: $wf-link-green;
+  }
+}
+
+.menu--main {
+  .noscript {
+    &.menu--main__header {
+      @include breakpoint($small) {
+        display: none;
+      }
+    }
+
+    &__checkbox--label {
+      padding: 0;
+      background-color: $white;
+      z-index: 99;
+    }
+
+    &__checkbox {
+      & + label {
+        svg {
+          float: right;
+        }
+
+        svg.svg-hamburger-dims {
+          display: block;
+        }
+
+        svg.svg-hamburger-x-dims {
+          display: none;
+        }
+      }
+
+      &:checked {
+        & + label {
+          .menu--main__header {
+            @include em("width", 100px);
+          }
+
+          svg.svg-hamburger-dims {
+            display: none;
+          }
+
+          svg.svg-hamburger-x-dims {
+            display: block;
+          }
+        }
+
+        & ~ .menu--main__collapse {
+          opacity: 1;
+        }
+
+        & ~ .header__block--search {
+          visibility: hidden;
+        }
+      }
+
+      & ~ .menu--main__collapse {
+        @include breakpoint($small) {
+          display: block;
+          opacity: 0;
+          transition: opacity 0.4s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .rm-noscript {
+    @include breakpoint($up-sm) {
+      display: none;
+    }
+  }
+}

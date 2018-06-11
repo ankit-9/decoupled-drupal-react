@@ -1,0 +1,56 @@
+{
+  "findStore": {
+    "title": "Select a Store",
+    "subTitle": "Choose one of the stores below or search by ZIP/Postal Code or by city &amp; state/province.",
+    "searchPlaceholder": "City, state or ZIP Code",
+    "isError": false,
+    "isLoading": false,
+    "items": [{
+      "title": "Arbor Trails",
+      "value": "arbor_trails",
+      "address": "4301 W. William Cannon",
+      "city": "Austin",
+      "pin": "TX 78679",
+      "distance": "0.004"
+    }, {
+      "title": "Lamar",
+      "value": "lamar",
+      "address": "4301 W. William Cannon",
+      "city": "Austin",
+      "pin": "TX 78679",
+      "distance": "0.01"
+    }, {
+      "title": "Gateway",
+      "value": "gateway",
+      "address": "4301 W. William Cannon",
+      "city": "Austin",
+      "pin": "TX 78679",
+      "distance": "0.02"
+    }, {
+      "title": "Domain",
+      "value": "domain",
+      "address": "4301 W. William Cannon",
+      "city": "Austin",
+      "pin": "TX 78679",
+      "distance": "0.025"
+    }, {
+      "title": "Revenent",
+      "value": "revenent",
+      "address": "4301 W. William Cannon",
+      "city": "Austin",
+      "pin": "TX 78679",
+      "distance": "0.03"
+    }, {
+      "title": "Lorem Ipsum",
+      "value": "lorem_ipsum",
+      "address": "4301 W. William Cannon",
+      "city": "Austin",
+      "pin": "TX 78679",
+      "distance": "0.045"
+    }],
+    "button": {
+      "cancel": "Cancel",
+      "select": "Save store"
+    }
+  }
+}

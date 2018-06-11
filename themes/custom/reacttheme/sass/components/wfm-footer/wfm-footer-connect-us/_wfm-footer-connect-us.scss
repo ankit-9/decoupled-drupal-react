@@ -1,0 +1,77 @@
+// WFM Footer Connect-us
+//
+// Markup: wfm-footer-connect-us.twig
+//
+// Style guide: components.wfm-footer.wfm-footer-connect-us
+
+.footer__block--connect {
+  @include breakpoint($small) {
+    @include em( 'padding', 28px 20px 18px);
+    @include em('border-bottom', 1px);
+
+    border-style: solid;
+    border-color: $light-gray;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+    .footer__block-title {
+      margin: 0;
+    }
+  }
+
+  ul.social {
+    padding-left: 0;
+
+    @include breakpoint($small) {
+      @include em( 'margin-top', 10px );
+    }
+
+    @include breakpoint($up-sm) {
+      @include em( 'margin-bottom', 30px );
+    }
+
+    .footer__block-nav-item {
+      @include em( 'margin-bottom', 10px );
+      @include em( 'margin-right', 20px );
+      @include em( 'width', 42px );
+      @include em( 'height', 42px );
+
+      @include breakpoint($very-small) {
+        @include em( 'margin-right', 10px );
+      }
+
+      display: inline-block;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .icon {
+      height: 3.2307em;
+      width: 3.2307em;
+      display: block;
+    }
+
+    .screen-reader-text {
+      @include em( 'width', 1px );
+      @include em( 'height', 1px );
+      @include em( 'right', 9999px );
+
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .footer__block-nav-link {
+      .ext {
+        display: none;
+      }
+
+      &::after {
+        content: '';
+        display: none;
+      }
+    }
+  }
+}

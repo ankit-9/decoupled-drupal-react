@@ -1,0 +1,11 @@
+// WFM My rewards - Digital Coupons (Unauthorised user) block.
+//
+// Markup: digital-coupons-unauth.twig
+//
+// Style guide: components.myrewards.digital-coupons-unauth
+
+.digital-coupons {
+  &.digital-coupons--unauth {
+    max-width: 100%;
+  }
+}

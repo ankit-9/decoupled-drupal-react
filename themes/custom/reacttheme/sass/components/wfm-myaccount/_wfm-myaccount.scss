@@ -1,0 +1,296 @@
+// WFM My Account
+//
+// Markup: wfm-myaccount.twig
+//
+// Style guide: components.wfm-myaccount
+
+.my-account {
+  &-wrapper {
+    .modal__container {
+      height: auto;
+
+      @include breakpoint($small) {
+        max-height: 90%;
+      }
+    }
+  }
+
+  &__head {
+    @extend %clearfix;
+
+    @include rem('padding', 0 20px 20px);
+    @include rem('margin-left', -20px);
+    @include rem('margin-right', -20px);
+
+    text-align: center;
+    border-bottom: 1px solid $search-border;
+
+    @include breakpoint($large) {
+      @include rem('padding-bottom', 30px);
+    }
+
+    &-title {
+      @extend %clearfix;
+
+      @include rem('margin', 50px 0 10px);
+      @include rem('font-size', 50px);
+
+      display: block;
+      padding: 0;
+      color: $wf-dr-blue;
+      font-family: $cooper-bt;
+      font-weight: bold;
+      line-height: 1.2;
+      text-transform: capitalize;
+
+      @include breakpoint($small) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__container {
+    @extend %clearfix;
+
+    @include rem('padding-top', 40px);
+    @include rem('padding-bottom', 80px);
+
+    box-sizing: border-box;
+
+    @include breakpoint($small) {
+      @include rem('padding-top', 20px);
+      @include rem('padding-bottom', 40px);
+
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    &-left {
+      @extend %clearfix;
+
+      @include breakpoint($large) {
+        @include span(7 at first);
+      }
+    }
+
+    &-right {
+      @extend %clearfix;
+
+      @include breakpoint($up-sm) {
+        margin-top: -98px;
+      }
+
+      @include breakpoint($large) {
+        @include span(4 at last no-gutters);
+      }
+    }
+
+    &-title {
+      @include rem('font-size', 24px);
+      @include rem('margin', 10px 0);
+
+      padding: 0;
+      font-family: $cooper-bt;
+      text-align: left;
+      text-transform: none;
+    }
+
+    &-desc {
+      @include rem('margin-bottom', 28px);
+
+      color: $wf-gray;
+      text-align: left;
+    }
+
+    .wfm-form {
+      @include rem('max-width', 600px);
+
+      margin: 0;
+
+      &.special-diets__form {
+        @include rem( 'margin-top', 30px );
+        @include rem( 'max-width', 960px );
+
+        width: 100%;
+
+        .wfm-form__item {
+          @include rem( 'margin-right', 10px );
+
+          float: left;
+          width: calc(50% - 10px);
+
+          @include breakpoint($small) {
+            width: 100%;
+            margin-right: 0;
+          }
+        }
+      }
+
+      &__checkbox--label {
+        float: left;
+
+        &::before {
+          top: 0;
+        }
+
+        i.css-checkbox {
+          top: 0;
+        }
+      }
+
+      &__item-submit {
+        .error-msg {
+          @include rem( 'top', 45px );
+        }
+      }
+
+      .disabled:not([type="submit"]) {
+        @include rem('border-width', 2px);
+
+        color: $med-gray;
+        border-color: $disabled-border;
+        background-color: $disabled-bg;
+      }
+
+      .email-error-link {
+        @include rem('top', 65px);
+      }
+
+      &__email-error {
+        @include rem('margin-bottom', 45px);
+
+        .wfm-form__error-msg {
+          @include rem('bottom', -20px);
+
+          top: auto;
+        }
+      }
+    }
+
+    .link {
+      @include link();
+
+      text-decoration: underline;
+    }
+
+    .no-data {
+      @include rem('font-size', 16px);
+
+      color: $wf-input-er;
+      line-height: 1.4;
+    }
+  }
+
+  &__tabs {
+    display: block;
+
+    &-navbar {
+      display: block;
+    }
+
+    &-nav {
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    &-item {
+      display: inline;
+      margin: 0;
+      padding: 0;
+
+      & ~ li::before {
+        display: inline;
+        content: " | ";
+        color: $blk;
+      }
+
+      @include breakpoint($very-small) {
+        &:nth-child(2n + 1)::before {
+          content: " ";
+        }
+
+        &:nth-child(2n)::after {
+          content: "\A";
+          white-space: pre;
+        }
+      }
+    }
+
+    .link {
+      @include link();
+      @include em('padding', 0 6px 6px);
+
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: underline;
+
+      &.active {
+        color: $wf-ft-lnkHover;
+      }
+
+      @include breakpoint($very-small) {
+        @include rem( 'margin-bottom', 5px );
+      }
+    }
+  }
+
+  &__linked-ac {
+    @include rem( 'margin', -20px 0 40px 0);
+
+    @include breakpoint($large) {
+      @include rem( 'margin', 0 0 0 20px);
+
+      margin-top: 0;
+    }
+
+    &-nav {
+      @include rem( 'margin', 20px 0 0 0);
+
+      list-style: none;
+      padding: 0;
+    }
+
+    &-item {
+      @extend %clearfix;
+
+      @include rem( 'margin', 0 0 15px 0);
+
+      display: block;
+      padding: 0;
+
+      @include breakpoint($up-sm) {
+        @include rem( 'margin', 0 0 30px 0);
+      }
+    }
+
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50%;
+
+      @include breakpoint($large) {
+        width: 65%;
+      }
+
+      svg {
+        @include rem( 'width', 35px);
+        @include rem( 'height', 35px);
+        @include rem( 'margin-right', 15px);
+
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .below-link {
+      @extend %clearfix;
+    }
+  }
+}

@@ -1,0 +1,187 @@
+// WFM Popup - Coupons Details.
+//
+// Markup: coupons-details-popup.twig
+//
+// Style guide: components.coupons.coupons-details-popup
+
+.coupons-detail {
+  @include rem('max-width', 560px);
+
+  border: 1px solid $lighter-gray;
+  margin: 0 auto;
+
+  &__header {
+    @include rem('padding', 0);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    color: $blk;
+
+    @include breakpoint($up-sm) {
+      @include rem('padding', 20px 20px 0);
+
+      flex-direction: row;
+    }
+
+    &-left {
+      @include rem('padding', 0);
+
+      @include breakpoint($up-sm) {
+        @include rem('padding', 15px);
+      }
+
+      img {
+        @include rem('width', 100px);
+
+        height: auto;
+
+        @include breakpoint($up-sm) {
+          @include rem('width', 160px);
+        }
+      }
+    }
+
+    &-right {
+      @include rem('padding', 15px 40px 15px 15px);
+
+      position: static;
+      flex: 1;
+      font-family: $avenier-next;
+    }
+  }
+
+  &__close {
+    @include rem('padding', 5px);
+    @include rem('top', 0);
+    @include rem('right', 5px);
+
+    position: absolute;
+    width: auto;
+    height: auto;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 0;
+    border: 0;
+    background-color: transparent;
+    transform: scale(1);
+    transition: all 0.2s cubic-bezier(0, 0, 0, 0.4);
+
+    &:focus,
+    &:hover {
+      border-radius: 0;
+      border: 0;
+      background-color: transparent;
+      transform: scale(1.1);
+      box-shadow: none;
+
+      svg {
+        fill: $dark-red;
+      }
+    }
+
+    svg {
+      @include rem('width', 24px);
+      @include rem('height', 24px);
+
+      fill: $red;
+    }
+  }
+
+  &__title {
+    @include rem('font-size', 18px);
+    @include rem('margin-bottom', 5px);
+
+    font-weight: 600;
+  }
+
+  &__description {
+    @include rem('font-size', 13px);
+    @include rem('margin-bottom', 10px);
+
+    line-height: 1.4;
+  }
+
+  &__validity {
+    @include rem('font-size', 13px);
+    @include rem('margin-bottom', 10px);
+
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  &__subtitle {
+    @include rem('font-size', 78px);
+    @include rem('margin', 10px 0 30px);
+
+    font-family: $avenier-next;
+    font-weight: bold;
+    color: $wf-green;
+
+    // .coupons-off-text {
+    //   text-decoration: underline;
+    // }
+
+    // .coupons-off-text,
+    // .coupons-dollar-sign {
+    //   @include rem('font-size', 36px);
+    //   @include rem('top', -28px);
+
+    //   position: relative;
+    // }
+  }
+
+  &__content {
+    @include rem('margin', 0 20px);
+    @include rem('font-size', 14px);
+    @include rem('padding', 20px 0);
+
+    position: static;
+    flex: 1;
+    font-family: $avenier-next;
+    font-weight: 500;
+    line-height: 1.4;
+    border-top: 2px solid $light-blue;
+  }
+
+  &__main {
+    @include rem('margin-bottom', 20px);
+
+    font-weight: 600;
+  }
+}
+
+.modal {
+  &__mask {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+  &__container {
+    background: white;
+    height: 90%;
+    position: relative;
+    z-index: 7;
+  }
+}

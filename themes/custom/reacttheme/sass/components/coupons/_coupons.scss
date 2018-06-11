@@ -1,0 +1,60 @@
+.path--coupons {
+  .main-wrapper {
+    background: $white;
+  }
+
+  .mq-footer {
+    border: 0;
+  }
+
+  .mq--main {
+    background: $wf-coupons-grey-bg;
+  }
+
+  .mq-main {
+    padding: 0;
+
+    @include breakpoint($up-sm) {
+      @include rem('padding', 0 20px);
+    }
+  }
+
+  .coupons-card-cont {
+    column-count: 1;
+    column-gap: 0;
+    border: 5px solid $wf-coupons-grey-bg;
+    background: $wf-coupons-grey-bg;
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+    @include breakpoint($up-sm) {
+      column-count: 2;
+      border: 10px solid $wf-coupons-grey-bg;
+    }
+  }
+
+  .coupons-page-card {
+    border: 5px solid $wf-coupons-grey-bg;
+    box-sizing: border-box;
+    break-inside: avoid;
+    background: $white;
+    position: relative;
+    z-index: 0;
+    margin: 0;
+
+    @include breakpoint($up-sm) {
+      border: 10px solid $wf-coupons-grey-bg;
+    }
+  }
+}
+
+.wfm-coupon-listing {
+  .modal__container {
+    @include rem('margin', 0 15px);
+
+    height: auto;
+    max-height: 90%;
+  }
+}
+

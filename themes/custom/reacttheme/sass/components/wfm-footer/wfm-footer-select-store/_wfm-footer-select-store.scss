@@ -1,0 +1,17 @@
+// WFM Footer Select Store
+//
+// Markup: wfm-footer-select-store.twig
+//
+// Style guide: components.wfm-footer.wfm-footer-select-store
+
+.footer__block--select-store {
+  .select-store-text {
+    margin-bottom: 0;
+  }
+
+  .select-store-link {
+    display: block;
+    margin: 0;
+    text-decoration: underline;
+  }
+}

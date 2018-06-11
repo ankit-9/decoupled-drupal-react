@@ -1,0 +1,47 @@
+// WFM Footer Newsletter
+//
+// Markup: wfm-footer-newsletter.twig
+//
+// Style guide: components.wfm-footer.wfm-footer-newsletter
+
+.footer__block--newsletter {
+  @include breakpoint($small) {
+    @include em( 'padding', 28px 20px );
+    @include em('border-bottom', 1px);
+
+    border-style: solid;
+    border-color: $light-gray;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+    .block-title {
+      margin: 0;
+    }
+  }
+
+  .newsletter-title {
+    margin: 0;
+  }
+
+  .newsletter-text {
+    margin-bottom: 0;
+    color: $wf-newsletter-text;
+    line-height: 1.4;
+
+    @include breakpoint($small) {
+      margin-top: 0.3846em;
+    }
+  }
+
+  .newsletter-link {
+    display: block;
+    margin: 0.4em 0 0;
+    color: $wf-link-green;
+    text-decoration: underline;
+
+    &:hover {
+      color: $wf-ft-lnkHover;
+    }
+  }
+}

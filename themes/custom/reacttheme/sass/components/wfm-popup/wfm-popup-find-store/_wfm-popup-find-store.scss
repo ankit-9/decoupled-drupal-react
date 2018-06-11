@@ -1,0 +1,427 @@
+// WFM POPUP - Find your store.
+//
+// Markup: wfm-popup-find-store.twig
+//
+// Style guide: components.wfm-popup-find-store
+
+.find-store {
+  @include em("max-width", 360px);
+  @include em("min-height", 480px);
+
+  font-size: $base-font-size-ems;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  &__header {
+    @include em("padding", 10px);
+
+    @include breakpoint($up-sm) {
+      @include em("padding", 15px);
+    }
+
+    position: relative;
+    color: $white;
+    text-align: center;
+    background-color: $wf-link-green;
+  }
+
+  &__close {
+    @include em("padding", 5px);
+    @include em("top", 10px);
+    @include em("right", 10px);
+
+    font-size: $base-font-size-ems;
+    position: absolute;
+    width: auto;
+    height: auto;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 0;
+    border: 0;
+    background-color: transparent;
+    transform: scale(1);
+    transition: all 0.2s cubic-bezier(0, 0, 0, 0.4);
+
+    @include breakpoint($small) {
+      @include em("top", 7px);
+      @include em("padding", 10px 4px);
+    }
+
+    &:focus,
+    &:hover {
+      border-radius: 0;
+      border: 0;
+      background-color: transparent;
+      transform: scale(1.1);
+      box-shadow: none;
+
+      svg {
+        fill: $lighter-gray;
+      }
+    }
+
+    svg {
+      @include em("width", 24px);
+      @include em("height", 24px);
+
+      fill: $white;
+    }
+  }
+
+  &__title {
+    @include em("font-size", 20px);
+
+    padding-top: 0.75em;
+    padding-bottom: 0;
+    color: $white;
+    font-family: $cooper-bt;
+    font-weight: 500;
+    line-height: 1.2;
+
+    @include breakpoint($up-sm) {
+      @include em("font-size", 28px);
+
+      padding-top: 0.71428571em;
+    }
+  }
+
+  &__sub-title {
+    @include em("font-size", 14px);
+
+    padding: 0.71428571em 0;
+    line-height: 1.4em;
+
+    @include breakpoint($up-sm) {
+      @include em("font-size", 16px);
+      @include em('padding', 0.9375em 0);
+    }
+  }
+
+  &__search {
+    display: flex;
+    width: 100%;
+    text-align: center;
+
+    & &-box {
+      @include em("font-size", 16px);
+
+      height: 2.8125em;
+      flex: 1;
+      margin: 0;
+      line-height: 1;
+      color: $med-gray;
+      padding: 0.55555556em;
+      border: 0.02778em solid $med-gray;
+      -webkit-appearance: none;
+      border-radius: 0;
+      box-sizing: border-box;
+    }
+
+    &-icon {
+      @include em("padding", 0 0 0 10px);
+
+      width: auto;
+      height: 2.5em;
+      cursor: pointer;
+      border-radius: 0;
+      border: 0;
+      background-color: transparent;
+      transform: scale(1);
+      transition: all 0.2s cubic-bezier(0, 0, 0, 0.4);
+
+      &:focus,
+      &:hover {
+        border-radius: 0;
+        border: 0;
+        background-color: transparent;
+        transform: scale(1.1);
+        box-shadow: none;
+
+        svg {
+          fill: $lighter-gray;
+        }
+      }
+
+      svg {
+        width: 1.6em;
+        height: 1.6em;
+        padding: 0.16666667em 0;
+        fill: $white;
+      }
+    }
+  }
+
+  &__loading {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    .lds-spinner {
+      > div {
+        background: $wf-link-green;
+      }
+    }
+  }
+
+  &__error {
+    @include em("font-size", 36px);
+
+    text-align: center;
+    width: 100%;
+    flex: 1;
+    color: $red;
+    font-family: $avenier-next;
+    font-weight: 500;
+    background-color: $med-gray;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__items {
+    width: 100%;
+    flex: 1;
+
+    &-wrapper {
+      display: flex;
+
+      & + .find-store__loading {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__item {
+    @include em("margin", 0 10px 0 0);
+
+    @include breakpoint($up-sm) {
+      @include em("margin", 0 20px 0 0);
+    }
+
+    position: relative;
+    border-bottom: 1px solid $store-item-border;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &.find-store__loadmore {
+      .find-store__loadmore-inner {
+        font-size: 1.28571429em;
+        font-weight: 600;
+        line-height: 1.6em;
+        text-align: center;
+        color: $wf-link-green;
+        transition: all 0.2s cubic-bezier(0, 0, 0, 0.4);
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          background: $wf-link-green;
+          color: $white;
+        }
+      }
+    }
+
+    &-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 1;
+      opacity: 0;
+      -webkit-appearance: none;
+
+      &:hover,
+      &:focus {
+        & + div {
+          background-color: $lighter-gray;
+        }
+      }
+
+      &:checked + div {
+        background-color: $lighter-gray;
+
+        i {
+          &.find-store__item-icon--selected {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &-content {
+      @include em("padding", 10px);
+
+      @include breakpoint($up-sm) {
+        @include em("padding", 15px);
+      }
+
+      position: relative;
+      transition: all 0.2s cubic-bezier(0, 0, 0, 0.4);
+    }
+
+    &-icon {
+      @include em("top", 20px);
+      @include em("left", 30px);
+
+      @include breakpoint($up-sm) {
+        @include em("left", 50px);
+      }
+
+      position: absolute;
+      opacity: 1;
+
+      &--selected {
+        opacity: 0;
+      }
+
+      svg {
+        @include em("width", 32px);
+        @include em("height", 32px);
+      }
+    }
+
+    &-l1,
+    &-l2,
+    &-l3 {
+      @include em("font-size", 12px);
+
+      line-height: 1.6em; //24px;
+
+      @include breakpoint($up-sm) {
+        @include em("font-size", 14px);
+      }
+    }
+
+    &-title {
+      font-size: 1.28571429em;      // 32px / 28px
+      font-weight: 600;
+      line-height: 1.6em;
+    }
+
+    &-address {
+      @include em("font-size", 14px);
+      @include em("margin", 5px 0);
+
+      font-style: normal;
+      line-height: 1.4;
+    }
+
+    &-distance {
+      @include em("font-size", 14px);
+    }
+  }
+
+  &__footer {
+    @include em("padding", 20px);
+
+    display: flex;
+    background-color: $white;
+    border-top: 1px solid $med-gray;
+  }
+
+  &__button {
+    @include em("font-size", 14px);
+
+    margin: 0 0.417em;
+    line-height: 1em;
+    padding: 0.55555556em 0;
+    border: 0.11111em solid $dark-red;
+    box-shadow: none;
+    flex: 1;
+    color: $white;
+    font-family: $avenier-next;
+    background-color: $dark-red;
+    border-radius: 1.33333333em;
+    transition: all 0.2s cubic-bezier(0, 0, 0, 0.4);
+
+    @include breakpoint($up-sm) {
+      @include em("font-size", 18px);
+
+      margin: 0 0.833em;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: $dark-red;
+      color: $white;
+      border-color: $dark-red;
+    }
+
+    &--disabled {
+      border-color: $lighter-gray;
+      background-color: $lighter-gray;
+      color: $med-gray;
+
+      &:focus,
+      &:hover {
+        border-color: $lighter-gray;
+        background-color: $lighter-gray;
+        color: $med-gray;
+      }
+    }
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.modal {
+  &__mask {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+  &__container {
+    background: white;
+    height: 90%;
+    position: relative;
+    z-index: 7;
+    overflow: auto;
+
+    @include breakpoint($small) {
+      height: 100%;
+    }
+
+    &.find-store-modal {
+      @include em("max-width", 360px);
+
+      width: 100%;
+    }
+  }
+}

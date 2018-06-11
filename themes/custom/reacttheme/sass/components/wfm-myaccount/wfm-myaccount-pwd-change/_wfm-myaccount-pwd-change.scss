@@ -1,0 +1,106 @@
+// WFM My Account Password Change Popup
+//
+// Markup: wfm-myaccount-pwd-change.twig
+//
+// Style guide: components.wfm-myaccount.wfm-myaccount-pwd-change
+.my-account {
+  &__popup {
+    @include rem('max-width', 560px);
+
+    display: inline-block;
+
+    &-header {
+      @include rem('margin-top', 40px);
+      @include rem('padding', 10px);
+
+      @include breakpoint($up-sm) {
+        @include rem('padding', 10px 20px);
+      }
+
+      font-family: $avenier-next;
+      font-weight: 500;
+      position: relative;
+      text-align: center;
+    }
+
+    &-close {
+      @include rem('padding', 10px);
+      @include rem('top', 5px);
+      @include rem('right', 10px);
+
+      position: absolute;
+      width: auto;
+      height: auto;
+      z-index: 10;
+      cursor: pointer;
+      border-radius: 0;
+      border: 0;
+      background-color: transparent;
+      transform: scale(1);
+      transition: all 0.2s cubic-bezier(0, 0, 0, 0.4);
+
+      @include breakpoint($small) {
+        top: 0;
+        right: 0;
+      }
+
+      &:focus,
+      &:hover {
+        border-radius: 0;
+        border: 0;
+        background-color: transparent;
+        transform: scale(1.1);
+        box-shadow: none;
+
+        svg {
+          fill: $lighter-gray;
+        }
+      }
+
+      svg {
+        @include rem('width', 24px);
+        @include rem('height', 24px);
+
+        fill: $white;
+      }
+    }
+
+    &-title {
+      @include rem('font-size', 18px);
+
+      font-family: $avenier-next;
+      font-weight: 500;
+
+      @include breakpoint($up-sm) {
+        @include rem('font-size', 24px);
+      }
+
+      @include breakpoint($small) {
+        @include rem('padding', 0 30px);
+        @include rem('font-size', 24px);
+      }
+    }
+
+    &-container {
+      @include rem('padding', 10px 20px);
+    }
+
+    .wfm-form {
+      &__error-msg--password {
+        @include rem('top', 65px);
+      }
+
+      &__item-submit {
+        .error-msg {
+          @include rem('top', 15px);
+
+          position: relative;
+          display: block;
+          margin: 0 auto;
+          left: auto;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

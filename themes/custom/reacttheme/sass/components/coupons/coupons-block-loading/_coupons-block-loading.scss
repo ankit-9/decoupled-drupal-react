@@ -1,0 +1,187 @@
+// WFM Coupons - Coupons Loading Block.
+//
+// Markup: coupons-block-loading.twig
+//
+// Style guide: components.coupons.coupons-block-loading
+.coupons-card--loading {
+  &.coupons-card {
+    @include rem('padding', 30px);
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    animation: anim 1s infinite linear;
+
+    @include breakpoint ($up-sm) {
+      flex-direction: row;
+      padding-bottom: 0;
+    }
+
+    @include breakpoint ($medium) {
+      @include rem('padding', 30px);
+
+      flex-direction: column;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0;
+      }
+    }
+
+    .coupons-card {
+      &__left {
+        @include rem('padding', 10px);
+
+        div {
+          @include rem('width', 96px);
+          @include rem('height', 96px);
+          @include rem('margin-bottom', 40px);
+
+          background: $light-gray;
+
+          @include breakpoint($up-sm) {
+            @include rem('width', 160px);
+            @include rem('height', 160px);
+          }
+        }
+      }
+
+      &__right {
+        @include rem('padding', 10px);
+
+        position: static;
+        flex: 1;
+        font-family: $avenier-next;
+      }
+
+      &__title {
+        @include rem('height', 18px);
+        @include rem('margin-bottom', 5px);
+
+        background: $light-gray;
+        width: 80%;
+        font-weight: 600;
+        margin: 0 auto;
+
+        @include breakpoint($up-sm) {
+          @include rem('padding', 15px);
+
+          margin: 0;
+        }
+
+        @include breakpoint ($medium) {
+          margin: 0 auto;
+        }
+      }
+
+      &__description {
+        @include rem('height', 13px);
+        @include rem('margin-bottom', 10px);
+
+        background: $light-gray;
+        width: 100%;
+      }
+
+      &__validity {
+        @include rem('height', 13px);
+        @include rem('margin-bottom', 10px);
+
+        background: $light-gray;
+        width: 100%;
+      }
+
+      &__subtitle {
+        @include rem('height', 72px);
+        @include rem('margin-bottom', 10px);
+
+        width: 100%;
+        background-color: $wf-green;
+      }
+
+      &__info {
+        @include rem('font-size', 18px);
+        @include rem('padding', 3px 0);
+        @include rem('width', 24px);
+        @include rem('height', 24px);
+        @include rem('bottom', 15px);
+        @include rem('left', 15px);
+
+        position: absolute;
+        height: auto;
+      }
+    }
+  }
+}
+
+@keyframes anim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes anim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes anim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes anim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes anim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

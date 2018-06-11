@@ -1,0 +1,34 @@
+// WFM Rewards - Like What you see Block
+//
+// Markup: rewards-lwys.twig
+//
+// Style guide: components.rewards-lwys
+.rewards-lyws {
+  @include rem('padding-top', 20px);
+  @include rem('margin-top', 10px);
+
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background: url(../compressed-images/homepage-block-border.png) center center repeat-x;
+  }
+
+  &__title {
+    @include rem('font-size', 26px);
+    @include rem('padding', 20px 0);
+
+    font-family: $cooper-bt;
+    text-align: center;
+
+    @include breakpoint($up-sm) {
+      @include rem('font-size', 32px);
+      @include rem('padding', 40px 0);
+    }
+  }
+}

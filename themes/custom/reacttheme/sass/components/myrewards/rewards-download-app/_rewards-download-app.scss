@@ -1,0 +1,76 @@
+// WFM My Rewards - Download App Block.
+//
+// Markup: rewards-download-app.twig
+//
+// Style guide: components.rewards-download-app
+
+.rewards-download-app-block {
+  @include rem('padding-bottom', 40px);
+  @include rem('padding-top', 60px);
+
+  text-align: center;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+
+  @include breakpoint($up-sm) {
+    @include rem('padding-right', 20px);
+    @include rem('padding-bottom', 60px);
+    @include rem('padding-top', 0);
+
+    width: 50%;
+  }
+
+  &::before {
+    @include breakpoint($small) {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background: url(../compressed-images/homepage-block-border.png) center center repeat-x;
+    }
+  }
+
+  &__image {
+    svg {
+      @include em('height', 417px);
+
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include rem('font-size', 32px);
+
+    font-family: $cooper-bt;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    @include rem('font-size', 16px);
+    @include rem('max-width', 240px);
+
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+
+  &__actions {
+    @include rem('margin-top', 25px);
+
+    &-btn {
+      @include rem('margin-right', 5px);
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .svg-app-store,
+      .svg-play-store {
+        width: 99px;
+        height: 30px;
+      }
+    }
+  }
+}

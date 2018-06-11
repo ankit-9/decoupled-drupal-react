@@ -1,0 +1,16 @@
+// WFM 500 Error
+//
+// Markup: wfm-page-error.twig
+//
+// Style guide: components.wfm-page-errors.wfm-page-error
+.page-er {
+  &__container {
+    .page__error-item {
+      @include breakpoint($small) {
+        @include rem('margin', 8px 0);
+
+        line-height: 1.6;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+/// Example global state/* code /////////////
+/// See https://smacss.com/book/type-state
+/* stylelint-disable */
+.is-collapsed {
+
+}
+
+.no-styling {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+/* stylelint-enable */
+
+a.ext {
+  &::after {
+    @include rem(width, 10px);
+    @include rem(height, 10px);
+    @include rem(margin-left, 5px);
+
+    position: relative;
+    top: auto;
+    left: auto;
+    text-indent: -99999px;
+    display: none;
+    vertical-align: middle;
+    background: url(../compressed-images/external-link.png) center center no-repeat;
+  }
+
+  span {
+    &.ext {
+      padding: 0;
+    }
+  }
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.change-password-link {
+  text-align: right;
+  padding-top: 5px;
+}

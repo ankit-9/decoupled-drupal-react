@@ -1,0 +1,56 @@
+{#
+menulinks is available in this twig file from wfm-footer.twig
+
+Raw Structure -- from - wfm-footer.twig:138
+
+  "menulinks" : [
+    {
+      "text": "Terms of Use",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    },
+    {
+      "text": "Privacy Policy",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    },
+    {
+      "text": "Supply Chain Disclosures",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    },
+    {
+      "text": "Internet Based Ads",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    },
+    {
+      "text": "CA Privacy Rights",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    },
+    {
+      "text": "Site Map",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    },
+    {
+      "text": "Site Information",
+      "url": "https://www.wholefoodsmarket.com/healthy-eating/getting-started"
+    }
+  ]
+
+#}
+
+<div class="footer__block">
+  <div class="footer__block--below-menu below-menu clearfix">
+    <p class="footer__block-text below-menu-text bold">Copyright {{ 'now'|date('Y') }} Whole Foods Market IP. L.P.</p>
+    <div class="footer__block-navbar below-menu-navbar" aria-label="Footer Below Menu">
+      <h3 class="hidden">Footer Below Menu</h3>
+      <ul class="footer__block-nav below-menu-nav">
+        {# Iterating all footer Below Menu Links (menulinks)#}
+        {% for menu in menulinks %}
+          <li class="footer__block-nav-item below-menu-nav-item">
+            <a class="footer__block-nav-link below-menu-nav-link" href="{{ menu.url }}">{{ menu.text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <p class="footer__block-text below-menu-text">"Whole Foods Market" is a registered trademark of Whole Foods Market IP, L.P.</p>
+  </div>
+</div>
+

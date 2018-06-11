@@ -1,0 +1,108 @@
+<div class="my-account clearfix">
+  <div class="my-account__head clearfix">
+      <h1 class="my-account__head-title">My Account</h1>
+      <div class="my-account__tabs">
+        <nav class="my-account__tabs-navbar" role="navigation" aria-label="my-account Setting Tabs">
+          <h4 class="hidden">Acount Setting Tabs</h4>
+          <ul class="my-account__tabs-nav">
+            <li class="my-account__tabs-item">
+              <a href="javascript:void(0)" class="my-account__tabs-link link active">Account Settings</a>
+            </li>
+            <li class="my-account__tabs-item">
+              <a href="javascript:void(0)" class="my-account__tabs-link link">Dietary Preferences</a>
+            </li>
+            <li class="my-account__tabs-item">
+              <a href="javascript:void(0)" class="my-account__tabs-link link">My Saved Recipes</a>
+            </li>
+            <li class="my-account__tabs-item">
+              <a href="javascript:void(0)" class="my-account__tabs-link link">Shopping Lists</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  </div>
+  <div class="my-account__container clearfix">
+    <div class="my-account__container-left clearfix">
+      <h2 class="my-account__container-title">Account Settings</h2>
+      <P class="no-data hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, cumque cupiditate labore non voluptates a. Nostrum in fuga ipsum minus corporis velit saepe natus magni obcaecati repellat ab quisquam, voluptas.</P>
+      <p class="my-account__container-desc">All Fields are required.</p>
+      <div class="wfm-form__wrapper">
+        <div class="wfm-form">
+          <form action="#" >
+            <div class="wfm-form__item">
+              <label for="email-address-af" class="wfm-form__label screen-reader-text" >Email Address</label>
+              <input type="text" name="email-address" class="wfm-form__input" id="email-address-af" placeholder="Email Address" aria-describedby="af-email-error-message" required="true">
+              <span class="wfm-form__error-msg hidden" id="af-email-error-message">Please provide a valid email address.</span>
+              <a href="javascript:void(0)" class="link">Re-send confiramtion email</a>
+            </div>
+            <div class="wfm-form__group clearfix">
+              <div class="wfm-form__item">
+                <label for="phone-number-af" class="wfm-form__label error" >Phone Number</label>
+                <input type="text" name="phone" class="wfm-form__input error" id="phone-number-af" placeholder="Phone Number" aria-describedby="af-phone-error-message" required="true">
+                <span class="wfm-form__error-msg" id="af-phone-error-message">Phone Number is required.</span>
+              </div>
+              <div class="wfm-form__item">
+                <label for="zip-code-af" class="wfm-form__label error" >5-Digit ZIP Code</label>
+                <input type="text" name="zip-code" class="wfm-form__input error" id="zip-code-af" placeholder="Zip Code" aria-describedby="af-zip-error-message" required="true">
+                <span class="wfm-form__error-msg" id="af-zip-error-message">5-digit ZIP is required</span>
+              </div>
+            </div>
+            <div class="wfm-form__group clearfix">
+              <div class="wfm-form__item">
+                <label for="house-hold-size-af" class="wfm-form__label error" >Household Size</label>
+                <select class="wfm-form__select error" name="section1" id="house-hold-size-af" aria-describedby="af-hosuehold-error-message" required="true">
+                  <option label="Household" disabled="true" selected="true">Household</option>
+                  <option label="1">1</option>
+                  <option label="2">2</option>
+                  <option label="3">3</option>
+                  <option label="4">4</option>
+                  <option label="5">5</option>
+                  <option label="6+">6+</option>
+                </select>
+                <div class="select__arrow error"></div>
+                <span class="wfm-form__error-msg" id="af-hosuehold-error-message">Household size is required.</span>
+              </div>
+              <div class="wfm-form__item">
+                <label for="password-af" class="wfm-form__label">Password</label>
+                <input type="password" name="password" class="wfm-form__input signup-form__input disabled" id="password-af" value="12321" disabled="true" >
+                <div class="change-password-link">
+                  <a href="javascript:void(0)" class="link">Change password</a>
+                </div>
+              </div>
+            </div>
+            <div class="wfm-form__item wfm-form__item-submit">
+              <input type="submit" value="Save changes" class="wfm-form__input" aria-describedby="af-submit-error">
+              <span class="wfm-form__error-msg error-msg" id="af-submit-error">
+                Sorry your changes were not save. Please try again.
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="my-account__container-right clearfix">
+      <div class="my-account__linked-ac">
+        <h2 class="my-account__container-title">Linked Accounts</h2>
+        <ul class="my-account__linked-ac-nav">
+          <li class="my-account__linked-ac-item">
+            <span class="icon">
+              <svg class="svg-social-icon-facebook-dims icon">
+                <use xlink:href="#social-icon-facebook"></use>
+              </svg>
+              Facebook</span>
+            <a class="my-account__linked-ac-link link" href="javascript:void(0)" aria-label="Unlink Facebook Account">unlink</a>
+          </li>
+          <li class="my-account__linked-ac-item">
+            <span class="icon">
+              <svg class="svg-social-icon-google-dims icon">
+                <use xlink:href="#social-icon-google"></use>
+              </svg>
+              Google</span>
+            <a class="my-account__linked-ac-link link" href="javascript:void(0)" aria-label="Unlink Google Account">unlink</a>
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="below-link link">link another account</a>
+      </div>
+    </div>
+  </div>
+</div>
